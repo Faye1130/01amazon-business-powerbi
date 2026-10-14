@@ -1,6 +1,7 @@
 # 亚马逊经营分析看板
 
 本地 Power BI 看板，包含经营总览、利润、流量、库存、广告、退货、目标管理和搜索词明细，共八页。
+在线版链接，需要登陆：https://app.powerbi.com/groups/me/reports/9343d760-7b97-450a-9986-6a6d0000817b/Page1?experience=power-bi
 
 ## 数据
 
