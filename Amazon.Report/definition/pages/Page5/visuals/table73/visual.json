@@ -1,0 +1,475 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "table73",
+  "position": {
+    "x": 186,
+    "y": 464,
+    "z": 74,
+    "height": 424,
+    "width": 1242,
+    "tabOrder": 74
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "广告"
+                    }
+                  },
+                  "Property": "广告活动"
+                }
+              },
+              "queryRef": "广告.广告活动",
+              "nativeQueryRef": "广告活动"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "广告"
+                    }
+                  },
+                  "Property": "关键词"
+                }
+              },
+              "queryRef": "广告.关键词",
+              "nativeQueryRef": "关键词"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "广告"
+                    }
+                  },
+                  "Property": "匹配方式"
+                }
+              },
+              "queryRef": "广告.匹配方式",
+              "nativeQueryRef": "匹配方式"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "日期"
+                    }
+                  },
+                  "Property": "曝光量"
+                }
+              },
+              "queryRef": "日期.曝光量",
+              "nativeQueryRef": "曝光量"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "日期"
+                    }
+                  },
+                  "Property": "点击数"
+                }
+              },
+              "queryRef": "日期.点击数",
+              "nativeQueryRef": "点击数"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "日期"
+                    }
+                  },
+                  "Property": "广告花费"
+                }
+              },
+              "queryRef": "日期.广告花费",
+              "nativeQueryRef": "广告花费"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "日期"
+                    }
+                  },
+                  "Property": "广告归因订单"
+                }
+              },
+              "queryRef": "日期.广告归因订单",
+              "nativeQueryRef": "广告归因订单"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "日期"
+                    }
+                  },
+                  "Property": "广告归因销售额"
+                }
+              },
+              "queryRef": "日期.广告归因销售额",
+              "nativeQueryRef": "广告归因销售额"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "日期"
+                    }
+                  },
+                  "Property": "广告销售成本比"
+                }
+              },
+              "queryRef": "日期.广告销售成本比",
+              "nativeQueryRef": "广告销售成本比"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "日期"
+                    }
+                  },
+                  "Property": "广告投入产出比"
+                }
+              },
+              "queryRef": "日期.广告投入产出比",
+              "nativeQueryRef": "广告投入产出比"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#395F89'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "backColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EEF2F8'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "广告.广告活动"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "广告.关键词"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "广告.匹配方式"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "日期.曝光量"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "日期.点击数"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "日期.广告花费"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "日期.广告归因订单"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "日期.广告归因销售额"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "日期.广告销售成本比"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.8D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "日期.广告投入产出比"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'广告活动与关键词表现'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#395F89'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

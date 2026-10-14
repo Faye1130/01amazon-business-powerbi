@@ -1,0 +1,2184 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"日期\",\"商品\",\"流量\",\"广告\",\"退货\",\"财务\",\"库存\",\"利润表行\",\"利润层级\",\"订单观察\",\"流量来源\",\"去年同期\",\"搜索词\",\"月度目标\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "zh-CN",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "01f961d4-c2a6-4057-925c-8b7996a2d057",
+        "fromColumn": "SKU",
+        "fromTable": "流量",
+        "toColumn": "SKU",
+        "toTable": "商品"
+      },
+      {
+        "name": "f82a6509-93aa-48ac-8fa8-fbd00a35dc95",
+        "fromColumn": "日期",
+        "fromTable": "流量",
+        "toColumn": "日期",
+        "toTable": "日期"
+      },
+      {
+        "name": "d29748c3-7c9e-485d-8439-cc4379aa1524",
+        "fromColumn": "SKU",
+        "fromTable": "广告",
+        "toColumn": "SKU",
+        "toTable": "商品"
+      },
+      {
+        "name": "9a1b18d0-5e07-4550-bd27-95335137788a",
+        "fromColumn": "日期",
+        "fromTable": "广告",
+        "toColumn": "日期",
+        "toTable": "日期"
+      },
+      {
+        "name": "e0fde1f7-a738-46ad-b119-e8f48d9bc844",
+        "fromColumn": "SKU",
+        "fromTable": "退货",
+        "toColumn": "SKU",
+        "toTable": "商品"
+      },
+      {
+        "name": "0e0faf74-566b-4fcc-9fbd-e35516eaff0a",
+        "fromColumn": "退货日期",
+        "fromTable": "退货",
+        "toColumn": "日期",
+        "toTable": "日期"
+      },
+      {
+        "name": "b968ccbf-4847-4fa1-bbdf-53fceae7b533",
+        "fromColumn": "SKU",
+        "fromTable": "财务",
+        "toColumn": "SKU",
+        "toTable": "商品"
+      },
+      {
+        "name": "63f7ee51-cd76-4744-81ac-4737b92602bf",
+        "fromColumn": "日期",
+        "fromTable": "财务",
+        "toColumn": "日期",
+        "toTable": "日期"
+      },
+      {
+        "name": "895be6ad-224c-4054-9b2d-a99bea7f63c3",
+        "fromColumn": "SKU",
+        "fromTable": "库存",
+        "toColumn": "SKU",
+        "toTable": "商品"
+      },
+      {
+        "name": "56cb46ce-cf62-4c12-b4b8-3dc71d444ca1",
+        "fromColumn": "日期",
+        "fromTable": "库存",
+        "toColumn": "日期",
+        "toTable": "日期"
+      },
+      {
+        "name": "dfe7ff60-d8e4-4765-a248-416565739f0b",
+        "fromColumn": "SKU",
+        "fromTable": "订单观察",
+        "toColumn": "SKU",
+        "toTable": "商品"
+      },
+      {
+        "name": "e022857f-d2f7-4165-837e-d24e9d6cfbc4",
+        "fromColumn": "日期",
+        "fromTable": "订单观察",
+        "toColumn": "日期",
+        "toTable": "日期"
+      },
+      {
+        "name": "d50a5149-b6f5-4c3c-a4df-1abf4b7056e2",
+        "fromColumn": "日期",
+        "fromTable": "流量来源",
+        "toColumn": "日期",
+        "toTable": "日期"
+      },
+      {
+        "name": "2db3d788-2a69-416b-a758-980af16fd31c",
+        "fromColumn": "SKU",
+        "fromTable": "流量来源",
+        "toColumn": "SKU",
+        "toTable": "商品"
+      },
+      {
+        "name": "a21e9e16-1e34-48fb-9bdb-54d33f29f50f",
+        "fromColumn": "日期",
+        "fromTable": "去年同期",
+        "toColumn": "日期",
+        "toTable": "日期"
+      },
+      {
+        "name": "2ad67d08-56cd-46d7-8931-2ef05dc2c8db",
+        "fromColumn": "SKU",
+        "fromTable": "去年同期",
+        "toColumn": "SKU",
+        "toTable": "商品"
+      },
+      {
+        "name": "13892b26-ab6e-4a53-af65-8b1b7546bdf2",
+        "fromColumn": "日期",
+        "fromTable": "搜索词",
+        "toColumn": "日期",
+        "toTable": "日期"
+      },
+      {
+        "name": "67c0c9be-da93-4881-8121-ddf8b9b3f2ec",
+        "fromColumn": "SKU",
+        "fromTable": "搜索词",
+        "toColumn": "SKU",
+        "toTable": "商品"
+      },
+      {
+        "name": "d08eb04d-cf9f-4ea2-bfe7-83beff4b8f62",
+        "fromColumn": "日期",
+        "fromTable": "月度目标",
+        "toColumn": "日期",
+        "toTable": "日期"
+      },
+      {
+        "name": "ae218d79-8035-497a-ba2e-a08a53bf1cd8",
+        "fromColumn": "SKU",
+        "fromTable": "月度目标",
+        "toColumn": "SKU",
+        "toTable": "商品"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "日期",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "72f1de62-01a4-5587-887f-1c7a88700188",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "年",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "cd52674d-d189-54ff-8523-598aedf0523b",
+            "sourceColumn": "年",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "月",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "4d0c896d-ce52-53f7-be45-ddedcc61af59",
+            "sourceColumn": "月",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "年月",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "352b3c3f-a439-5289-a237-54a3c9433a53",
+            "sourceColumn": "年月",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "星期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "3fdf2f00-b1f3-50cc-b3d9-f19a6d40adc4",
+            "sourceColumn": "星期",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e754c16f-d4fa-5189-b09f-6c21e7fbf994",
+        "measures": [
+          {
+            "name": "销售额",
+            "expression": "SUM('流量'[净订购销售额美元])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "bd87716e-1375-5532-8294-fc4ba3389bd2"
+          },
+          {
+            "name": "订单数",
+            "expression": "SUM('流量'[订单数])",
+            "formatString": "#,0",
+            "lineageTag": "ab239b61-c59c-5ae1-bc9d-d02c956adc3d"
+          },
+          {
+            "name": "销量",
+            "expression": "SUM('流量'[订购件数])",
+            "formatString": "#,0",
+            "lineageTag": "788cf57e-40e8-5278-a311-181e88329cf7"
+          },
+          {
+            "name": "商品会话数",
+            "expression": "SUM('流量'[商品会话数])",
+            "formatString": "#,0",
+            "lineageTag": "4204755d-736b-5cbb-90b0-76248f84385e"
+          },
+          {
+            "name": "订单会话比",
+            "expression": "DIVIDE([订单数],[商品会话数])",
+            "formatString": "0.00%",
+            "lineageTag": "bccae521-24af-5946-b7f9-459680a77765"
+          },
+          {
+            "name": "客单价",
+            "expression": "DIVIDE([销售额],[订单数])",
+            "formatString": "\"$\"0.00",
+            "lineageTag": "81f21c61-8789-5497-b346-060ea34cb9af"
+          },
+          {
+            "name": "经营贡献利润",
+            "expression": "SUM('财务'[金额美元])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "9b817915-a20c-5b91-bc0e-223befd4257b"
+          },
+          {
+            "name": "财务科目金额",
+            "expression": "SUM('财务'[金额美元])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "4a73b49c-e648-521d-bcba-e6212ff70bb0"
+          },
+          {
+            "name": "广告花费",
+            "expression": "SUM('广告'[花费美元])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "b0896b1f-b7a6-5f09-98a1-d07a33a97030"
+          },
+          {
+            "name": "广告归因销售额",
+            "expression": "SUM('广告'[归因销售额美元])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "002fd848-e65e-5e0e-9039-927334dc30a7"
+          },
+          {
+            "name": "点击数",
+            "expression": "SUM('广告'[点击])",
+            "formatString": "#,0",
+            "lineageTag": "b12888fa-04f4-5fb4-b28a-afc635c053d7"
+          },
+          {
+            "name": "点击率",
+            "expression": "DIVIDE([点击数],SUM('广告'[曝光]))",
+            "formatString": "0.00%",
+            "lineageTag": "71b2b0e2-5938-55f4-bce9-7ca0e6e91339"
+          },
+          {
+            "name": "广告投入产出比",
+            "expression": "DIVIDE([广告归因销售额],[广告花费])",
+            "formatString": "0.00",
+            "lineageTag": "679b576d-d0b7-56ca-a3c6-131de7258ccf"
+          },
+          {
+            "name": "广告销售成本比",
+            "expression": "DIVIDE([广告花费],[广告归因销售额])",
+            "formatString": "0.00%",
+            "lineageTag": "ab1a69f4-0ef8-5968-b0c1-12a4465187e5"
+          },
+          {
+            "name": "期末可售库存",
+            "expression": "VAR d=MAX('日期'[日期]) RETURN CALCULATE(SUM('库存'[期末可售件数]),'日期'[日期]=d)",
+            "formatString": "#,0",
+            "lineageTag": "3ae96fd4-5933-510c-805d-b9105b75fd07"
+          },
+          {
+            "name": "期末在途库存",
+            "expression": "VAR d=MAX('日期'[日期]) RETURN CALCULATE(SUM('库存'[在途件数]),'日期'[日期]=d)",
+            "formatString": "#,0",
+            "lineageTag": "ffd6dfb6-6b85-57f3-b820-18f98f06e9d0"
+          },
+          {
+            "name": "退货件数",
+            "expression": "SUM('退货'[退货件数])",
+            "formatString": "#,0",
+            "lineageTag": "25cf24bb-d7ea-5ff9-9e28-6504b2115ce3"
+          },
+          {
+            "name": "退款金额",
+            "expression": "SUM('退货'[退款美元])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "ef2eaa57-1129-55f1-b849-65677ad9ad35"
+          },
+          {
+            "name": "件均售价",
+            "expression": "DIVIDE([销售额],[销量])",
+            "formatString": "\"$\"0.00",
+            "lineageTag": "5255d6f2-a150-4844-a52e-604077243d2d"
+          },
+          {
+            "name": "利润率",
+            "expression": "DIVIDE([经营贡献利润],[销售收入总额])",
+            "formatString": "0.0%",
+            "lineageTag": "4d1b342e-1e93-45f5-b538-4dbfd2e5711f"
+          },
+          {
+            "name": "广告费占销售额",
+            "expression": "DIVIDE([广告花费],[销售额])",
+            "formatString": "0.0%",
+            "lineageTag": "ac4db256-7d58-4bca-a41e-b45411e9cb9d"
+          },
+          {
+            "name": "曝光量",
+            "expression": "SUM('广告'[曝光])",
+            "formatString": "#,0",
+            "lineageTag": "a1e901c3-990a-45ed-815c-277bbf00c910"
+          },
+          {
+            "name": "广告归因订单",
+            "expression": "SUM('广告'[归因订单])",
+            "formatString": "#,0",
+            "lineageTag": "fb16e288-a877-405d-86b0-9d5d3be8f24a"
+          },
+          {
+            "name": "点击单价",
+            "expression": "DIVIDE([广告花费],[点击数])",
+            "formatString": "\"$\"0.00",
+            "lineageTag": "7ce62c81-6763-45bb-8138-908b0607626b"
+          },
+          {
+            "name": "广告订单点击比",
+            "expression": "DIVIDE([广告归因订单],[点击数])",
+            "formatString": "0.0%",
+            "lineageTag": "9173374a-09c3-45c0-aba4-c1cae50ff76d"
+          },
+          {
+            "name": "退货记录数",
+            "expression": "COUNTROWS('退货')",
+            "formatString": "#,0",
+            "lineageTag": "78deffbe-e14d-45ea-b08e-a8a583446cf5"
+          },
+          {
+            "name": "近7天销量",
+            "expression": "VAR d=MAX('日期'[日期]) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(d-firstDay+1>=7,CALCULATE([销量],REMOVEFILTERS('日期'),'日期'[日期]>d-7,'日期'[日期]<=d))",
+            "formatString": "#,0",
+            "lineageTag": "47d6128f-4283-41ca-a265-2d34d136a5e7"
+          },
+          {
+            "name": "近14天销量",
+            "expression": "VAR d=MAX('日期'[日期]) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(d-firstDay+1>=14,CALCULATE([销量],REMOVEFILTERS('日期'),'日期'[日期]>d-14,'日期'[日期]<=d))",
+            "formatString": "#,0",
+            "lineageTag": "29c0334d-f5f4-4647-ab9f-910d9540ae90"
+          },
+          {
+            "name": "近30天销量",
+            "expression": "VAR d=MAX('日期'[日期]) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(d-firstDay+1>=30,CALCULATE([销量],REMOVEFILTERS('日期'),'日期'[日期]>d-30,'日期'[日期]<=d))",
+            "formatString": "#,0",
+            "lineageTag": "bc7e9afc-7bb8-44ba-bf65-2ba0bc366c63"
+          },
+          {
+            "name": "日均销量7天",
+            "expression": "DIVIDE([近7天销量],7)",
+            "formatString": "0.0",
+            "lineageTag": "c94c4ff9-1386-4daf-8660-9d7dbc26738c"
+          },
+          {
+            "name": "可售覆盖天数",
+            "expression": "DIVIDE([期末可售库存],[日均销量7天])",
+            "formatString": "0.0",
+            "lineageTag": "2bd52f31-42bc-4fa6-9cd5-b5f809b051fd"
+          },
+          {
+            "name": "库存状态",
+            "expression": "IF(NOT ISINSCOPE('商品'[SKU]),FORMAT([缺货SKU数],\"0\") & \"款缺货\",IF(ISBLANK([近7天销量]),\"历史不足\",IF([期末可售库存]=0,\"🔴 缺货\",IF([近7天销量]=0,\"无近期销量\",IF([可售覆盖天数]<15,\"🔴 紧张\",IF([可售覆盖天数]<=30,\"🟡 关注\",\"🟢 充足\"))))))",
+            "lineageTag": "db1d2424-ac4e-4b1f-a974-98c90d42bec4"
+          },
+          {
+            "name": "销售额上期",
+            "expression": "VAR oneMonth=HASONEVALUE('日期'[年月]) VAR d=MAX('日期'[日期]) VAR prevStart=EOMONTH(d,-2)+1 VAR prevEnd=EOMONTH(d,-1) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(oneMonth && prevStart>=firstDay,CALCULATE([销售额],REMOVEFILTERS('日期'),'日期'[日期]>=prevStart,'日期'[日期]<=prevEnd))",
+            "formatString": "#,0.00",
+            "lineageTag": "be359cf6-b0f4-4307-9e95-a8bfbf05d901"
+          },
+          {
+            "name": "销售额变化",
+            "expression": "DIVIDE([销售额]-[销售额上期],[销售额上期])",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "lineageTag": "dc6c77f8-fd6c-471e-b468-a78fb6eebcd0"
+          },
+          {
+            "name": "商品会话数上期",
+            "expression": "VAR oneMonth=HASONEVALUE('日期'[年月]) VAR d=MAX('日期'[日期]) VAR prevStart=EOMONTH(d,-2)+1 VAR prevEnd=EOMONTH(d,-1) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(oneMonth && prevStart>=firstDay,CALCULATE([商品会话数],REMOVEFILTERS('日期'),'日期'[日期]>=prevStart,'日期'[日期]<=prevEnd))",
+            "formatString": "#,0.00",
+            "lineageTag": "037c0e64-513b-4611-b0ec-58d89f2cd96a"
+          },
+          {
+            "name": "商品会话数变化",
+            "expression": "DIVIDE([商品会话数]-[商品会话数上期],[商品会话数上期])",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "lineageTag": "a068eba0-6461-4d14-ae7d-0528c9ba7a7b"
+          },
+          {
+            "name": "订单会话比上期",
+            "expression": "VAR oneMonth=HASONEVALUE('日期'[年月]) VAR d=MAX('日期'[日期]) VAR prevStart=EOMONTH(d,-2)+1 VAR prevEnd=EOMONTH(d,-1) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(oneMonth && prevStart>=firstDay,CALCULATE([订单会话比],REMOVEFILTERS('日期'),'日期'[日期]>=prevStart,'日期'[日期]<=prevEnd))",
+            "formatString": "0.00%",
+            "lineageTag": "a375414a-df19-4620-b2e2-fd2cdcae770b"
+          },
+          {
+            "name": "订单会话比变化",
+            "expression": "DIVIDE([订单会话比]-[订单会话比上期],[订单会话比上期])",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "lineageTag": "f76d575d-bbce-49c9-b46e-5b35dcf28c9e"
+          },
+          {
+            "name": "销量上期",
+            "expression": "VAR oneMonth=HASONEVALUE('日期'[年月]) VAR d=MAX('日期'[日期]) VAR prevStart=EOMONTH(d,-2)+1 VAR prevEnd=EOMONTH(d,-1) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(oneMonth && prevStart>=firstDay,CALCULATE([销量],REMOVEFILTERS('日期'),'日期'[日期]>=prevStart,'日期'[日期]<=prevEnd))",
+            "formatString": "#,0.00",
+            "lineageTag": "98f1acf7-c6a5-451e-a934-7517b0527107"
+          },
+          {
+            "name": "销量变化",
+            "expression": "DIVIDE([销量]-[销量上期],[销量上期])",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "lineageTag": "45c0f865-0327-41d4-97aa-3157b373645e"
+          },
+          {
+            "name": "客单价上期",
+            "expression": "VAR oneMonth=HASONEVALUE('日期'[年月]) VAR d=MAX('日期'[日期]) VAR prevStart=EOMONTH(d,-2)+1 VAR prevEnd=EOMONTH(d,-1) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(oneMonth && prevStart>=firstDay,CALCULATE([客单价],REMOVEFILTERS('日期'),'日期'[日期]>=prevStart,'日期'[日期]<=prevEnd))",
+            "formatString": "#,0.00",
+            "lineageTag": "fb70934a-06ad-4a09-ad70-6ec2103e8314"
+          },
+          {
+            "name": "客单价变化",
+            "expression": "DIVIDE([客单价]-[客单价上期],[客单价上期])",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "lineageTag": "e5521fbf-153c-4013-a351-3203778bc597"
+          },
+          {
+            "name": "利润表金额",
+            "expression": "SWITCH(SELECTEDVALUE('利润表行'[序号]),1,CALCULATE([财务科目金额],'财务'[科目]=\"销售收入\"),2,CALCULATE([财务科目金额],'财务'[科目]=\"促销折扣\"),3,CALCULATE([财务科目金额],'财务'[科目]=\"退款\"),5,CALCULATE([财务科目金额],'财务'[科目]=\"平台佣金\"),6,CALCULATE([财务科目金额],'财务'[科目]=\"佣金返还\"),7,CALCULATE([财务科目金额],'财务'[科目]=\"配送费\"),8,CALCULATE([财务科目金额],'财务'[科目]=\"仓储费\"),9,CALCULATE([财务科目金额],'财务'[科目]=\"退货处理费\"),10,CALCULATE([财务科目金额],'财务'[科目]=\"广告费\"),11,CALCULATE([财务科目金额],'财务'[科目]=\"商品成本\"),12,CALCULATE([财务科目金额],'财务'[科目]=\"退回商品成本转回\"),4,CALCULATE([财务科目金额],'财务'[科目] IN {\"销售收入\",\"促销折扣\",\"退款\"}),13,[经营贡献利润])",
+            "formatString": "\"$\"#,0.00;(\"$\"#,0.00)",
+            "lineageTag": "a0fe9274-e8bd-443e-8401-c8fc53ba4a5f"
+          },
+          {
+            "name": "收入占比",
+            "expression": "DIVIDE([利润表金额],CALCULATE([财务科目金额],'财务'[科目]=\"销售收入\"))",
+            "formatString": "0.0%",
+            "lineageTag": "e14e05a3-b116-4408-a7ed-bfbea21d1e13"
+          },
+          {
+            "name": "销售额环比显示",
+            "expression": "IF(NOT HASONEVALUE('日期'[年月]),\"请选择单个月份\",IF(ISBLANK([销售额上期]),\"暂无上月数据\",IF([销售额上期]=0,\"上月为零，无法计算\",FORMAT([销售额变化],\"+0.0%;-0.0%;0.0%\"))))",
+            "lineageTag": "c058062a-5a06-44b8-8ac7-4ed34f483c0a"
+          },
+          {
+            "name": "商品会话数环比显示",
+            "expression": "IF(NOT HASONEVALUE('日期'[年月]),\"请选择单个月份\",IF(ISBLANK([商品会话数上期]),\"暂无上月数据\",IF([商品会话数上期]=0,\"上月为零，无法计算\",FORMAT([商品会话数变化],\"+0.0%;-0.0%;0.0%\"))))",
+            "lineageTag": "604a255e-4f86-41dd-a357-16aa1d549016"
+          },
+          {
+            "name": "订单会话比环比显示",
+            "expression": "IF(NOT HASONEVALUE('日期'[年月]),\"请选择单个月份\",IF(ISBLANK([订单会话比上期]),\"暂无上月数据\",IF([订单会话比上期]=0,\"上月为零，无法计算\",FORMAT([订单会话比变化],\"+0.0%;-0.0%;0.0%\"))))",
+            "lineageTag": "d513ccb4-06e6-4614-b859-da6d89406680"
+          },
+          {
+            "name": "销量环比显示",
+            "expression": "IF(NOT HASONEVALUE('日期'[年月]),\"请选择单个月份\",IF(ISBLANK([销量上期]),\"暂无上月数据\",IF([销量上期]=0,\"上月为零，无法计算\",FORMAT([销量变化],\"+0.0%;-0.0%;0.0%\"))))",
+            "lineageTag": "1259ced2-6f8d-444b-8d18-687b39b60788"
+          },
+          {
+            "name": "客单价环比显示",
+            "expression": "IF(NOT HASONEVALUE('日期'[年月]),\"请选择单个月份\",IF(ISBLANK([客单价上期]),\"暂无上月数据\",IF([客单价上期]=0,\"上月为零，无法计算\",FORMAT([客单价变化],\"+0.0%;-0.0%;0.0%\"))))",
+            "lineageTag": "3f66462d-776c-4103-a9a3-e588beedd729"
+          },
+          {
+            "name": "选中利润项目金额",
+            "expression": "CALCULATE([财务科目金额],TREATAS(VALUES('利润层级'[三级科目]),'财务'[科目]))",
+            "formatString": "\"$\"#,0.00;(\"$\"#,0.00)",
+            "lineageTag": "2c953ee3-52d6-4d87-89a4-f7f09f3a6b37"
+          },
+          {
+            "name": "销售收入总额",
+            "expression": "CALCULATE([财务科目金额],'财务'[科目]=\"销售收入\")",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "b8fe3554-fcee-4b06-9649-c31e790e17a8"
+          },
+          {
+            "name": "选中项目收入占比",
+            "expression": "DIVIDE([选中利润项目金额],[销售收入总额])",
+            "formatString": "0.0%",
+            "lineageTag": "8716bf52-cd16-42a8-8655-62cb083f4c5c"
+          },
+          {
+            "name": "期末预留库存",
+            "expression": "VAR d=MAX('日期'[日期]) RETURN CALCULATE(SUM('库存'[预留件数]),'日期'[日期]=d)",
+            "formatString": "#,0",
+            "lineageTag": "48436bd2-58da-49d3-86ec-541816481259"
+          },
+          {
+            "name": "期末总库存",
+            "expression": "[期末可售库存]+[期末预留库存]+[期末在途库存]",
+            "formatString": "#,0",
+            "lineageTag": "994cbb14-65e0-4f36-8b8c-4c57c8b456c9"
+          },
+          {
+            "name": "缺货SKU数",
+            "expression": "COUNTROWS(FILTER(VALUES('商品'[SKU]),NOT ISBLANK([期末可售库存]) && [期末可售库存]=0))",
+            "formatString": "#,0",
+            "lineageTag": "9bebc559-c7a2-46b3-9521-53494706ec49"
+          },
+          {
+            "name": "库存状态颜色",
+            "expression": "IF(NOT ISINSCOPE('商品'[SKU]),\"#FFFFFF\",IF([期末可售库存]=0,\"#EF797B\",IF(ISBLANK([可售覆盖天数]),\"#BAB9DA\",IF([可售覆盖天数]<15,\"#EF797B\",IF([可售覆盖天数]<=30,\"#E7C552\",\"#7BC781\")))))",
+            "lineageTag": "bdd8fc04-bfe7-4023-b171-ceba104a9be3"
+          },
+          {
+            "name": "单次会话销售额",
+            "expression": "DIVIDE([销售额],[商品会话数])",
+            "formatString": "\"$\"0.00",
+            "lineageTag": "4f29574c-b35d-473f-8d82-515ce0d4a815"
+          },
+          {
+            "name": "日均销售额",
+            "expression": "DIVIDE([销售额],COUNTROWS(VALUES('日期'[日期])))",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "3dbeabeb-cd80-470a-bc73-cd46a41f0fd4"
+          },
+          {
+            "name": "日均会话数",
+            "expression": "DIVIDE([商品会话数],COUNTROWS(VALUES('日期'[日期])))",
+            "formatString": "#,0.0",
+            "lineageTag": "c2796136-b1ea-4cf2-9df0-7ebf23f739da"
+          },
+          {
+            "name": "退货原因占比",
+            "expression": "DIVIDE([退货件数],CALCULATE([退货件数],REMOVEFILTERS('退货'[原因])))",
+            "formatString": "0.0%",
+            "lineageTag": "851867c2-e79a-4f4e-9fe2-b9a0aec4caa4"
+          },
+          {
+            "name": "退货处理费用",
+            "expression": "-CALCULATE([财务科目金额],'财务'[科目]=\"退货处理费\")",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "9c5b8ba0-5c76-45d1-a7b6-ae5bd9713acb"
+          },
+          {
+            "name": "无订单广告花费",
+            "expression": "COALESCE(SUMX(FILTER(SUMMARIZE('广告','广告'[广告活动],'广告'[关键词]),[广告归因订单]=0),[广告花费]),0)",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "597a2cd6-0783-420c-82fe-d8e8cc54b047"
+          },
+          {
+            "name": "观察满10天订购件数",
+            "expression": "VAR d=MAX('日期'[日期]) RETURN CALCULATE(SUM('订单观察'[订购件数]),KEEPFILTERS('订单观察'[日期]<=d-10))",
+            "formatString": "#,0",
+            "lineageTag": "20040869-c94e-499c-80b7-aef61c1d0a35"
+          },
+          {
+            "name": "观察满10天退货件数",
+            "expression": "VAR d=MAX('日期'[日期]) RETURN CALCULATE(SUM('订单观察'[十天内退货件数]),KEEPFILTERS('订单观察'[日期]<=d-10))",
+            "formatString": "#,0",
+            "lineageTag": "2501bc25-8049-4187-9cd0-c43d9770682a"
+          },
+          {
+            "name": "10天内退货率",
+            "expression": "DIVIDE([观察满10天退货件数],[观察满10天订购件数])",
+            "formatString": "0.00%",
+            "lineageTag": "ee54e899-1865-4ddc-8f41-6f001b6c54ba"
+          },
+          {
+            "name": "自然会话数",
+            "expression": "SUM('流量来源'[自然会话数])",
+            "formatString": "#,0",
+            "lineageTag": "781e7c76-4230-493e-a70d-aad4acdb05dd"
+          },
+          {
+            "name": "广告来源会话数",
+            "expression": "SUM('流量来源'[广告来源会话数])",
+            "formatString": "#,0",
+            "lineageTag": "7c9a244c-593c-4346-a646-2f95627d78a0"
+          },
+          {
+            "name": "自然订单数",
+            "expression": "SUM('流量来源'[自然订单数])",
+            "formatString": "#,0",
+            "lineageTag": "8030f14e-cd81-4efe-b47f-61f8e6c8f862"
+          },
+          {
+            "name": "销售额去年同期",
+            "expression": "SUM('去年同期'[销售额美元])",
+            "formatString": "#,0",
+            "lineageTag": "cabbfa2d-42a6-4088-98f7-d9e20088c6f0"
+          },
+          {
+            "name": "销售额同比",
+            "expression": "DIVIDE([销售额]-[销售额去年同期],[销售额去年同期])",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "lineageTag": "bc751709-fc75-4648-86c7-02e09a616ab9"
+          },
+          {
+            "name": "商品会话数去年同期",
+            "expression": "SUM('去年同期'[商品会话数])",
+            "formatString": "#,0",
+            "lineageTag": "8f078e6b-d9b0-4748-b1c9-d9749031a346"
+          },
+          {
+            "name": "商品会话数同比",
+            "expression": "DIVIDE([商品会话数]-[商品会话数去年同期],[商品会话数去年同期])",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "lineageTag": "23fc604e-f753-41c6-a946-d935257c38fe"
+          },
+          {
+            "name": "订单数去年同期",
+            "expression": "SUM('去年同期'[订单数])",
+            "formatString": "#,0",
+            "lineageTag": "33165d40-fbf8-477f-8b1c-f6767faab9f0"
+          },
+          {
+            "name": "订单数同比",
+            "expression": "DIVIDE([订单数]-[订单数去年同期],[订单数去年同期])",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "lineageTag": "18f3cfc4-147d-46ed-a830-7650008df689"
+          },
+          {
+            "name": "销量去年同期",
+            "expression": "SUM('去年同期'[销量])",
+            "formatString": "#,0",
+            "lineageTag": "1348c32a-e7c3-451f-a971-6b112f05615d"
+          },
+          {
+            "name": "销量同比",
+            "expression": "DIVIDE([销量]-[销量去年同期],[销量去年同期])",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "lineageTag": "8a6cd865-fa5d-40e6-b695-1306c4fddb2d"
+          },
+          {
+            "name": "搜索词花费",
+            "expression": "SUM('搜索词'[花费美元])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "293bff15-dacd-472e-82c0-89301a3726cb"
+          },
+          {
+            "name": "搜索词订单",
+            "expression": "SUM('搜索词'[归因订单])",
+            "formatString": "#,0",
+            "lineageTag": "1d492cf0-e66a-411d-8b2b-ada843fa7a67"
+          },
+          {
+            "name": "搜索词销售额",
+            "expression": "SUM('搜索词'[归因销售额美元])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "45bf90a7-13f6-47f5-ba78-606b13293ff2"
+          },
+          {
+            "name": "搜索词点击",
+            "expression": "SUM('搜索词'[点击])",
+            "formatString": "#,0",
+            "lineageTag": "a09f70bf-1e1f-4985-9f6b-817a47493585"
+          },
+          {
+            "name": "搜索词ACOS",
+            "expression": "DIVIDE([搜索词花费],[搜索词销售额])",
+            "formatString": "0.0%",
+            "lineageTag": "a437f6d0-c072-4445-a4c8-c1923e881a5f"
+          },
+          {
+            "name": "搜索词出单率",
+            "expression": "DIVIDE(COUNTROWS(FILTER(VALUES('搜索词'[搜索词]),[搜索词订单]>0)),COUNTROWS(FILTER(VALUES('搜索词'[搜索词]),[搜索词点击]>0)))",
+            "formatString": "0.0%",
+            "lineageTag": "b9071dc2-cc2d-4c5f-9d23-cf483b31ee05"
+          },
+          {
+            "name": "销售额目标",
+            "expression": "SUM('月度目标'[销售额目标])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "720a9197-33d0-48f6-b9f4-b3c293ff29db"
+          },
+          {
+            "name": "销量目标",
+            "expression": "SUM('月度目标'[销量目标])",
+            "formatString": "#,0",
+            "lineageTag": "d4b5bbef-1e58-4c41-9a21-98a99117822f"
+          },
+          {
+            "name": "利润目标",
+            "expression": "SUM('月度目标'[利润目标])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "dd41112b-99e6-4758-ba3f-7afc32eae289"
+          },
+          {
+            "name": "广告预算",
+            "expression": "SUM('月度目标'[广告预算])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "893071d7-abba-4619-8853-0b4518522669"
+          },
+          {
+            "name": "销售额完成率",
+            "expression": "DIVIDE([销售额],[销售额目标])",
+            "formatString": "0.0%",
+            "lineageTag": "185aea7b-a50e-4a65-8677-eac91f74927e"
+          },
+          {
+            "name": "销售额差额",
+            "expression": "[销售额]-[销售额目标]",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "a8d35702-8c21-4b7a-a83f-046958f2e49a"
+          },
+          {
+            "name": "销量完成率",
+            "expression": "DIVIDE([销量],[销量目标])",
+            "formatString": "0.0%",
+            "lineageTag": "3cff82cb-4898-462f-be5e-31ee3291fdf7"
+          },
+          {
+            "name": "销量差额",
+            "expression": "[销量]-[销量目标]",
+            "formatString": "#,0",
+            "lineageTag": "6fb0d7fe-e97c-4315-b72d-086014e2548b"
+          },
+          {
+            "name": "利润完成率",
+            "expression": "DIVIDE([经营贡献利润],[利润目标])",
+            "formatString": "0.0%",
+            "lineageTag": "3a031dd0-a920-43db-a577-c1bfd0cd4e8e"
+          },
+          {
+            "name": "利润差额",
+            "expression": "[经营贡献利润]-[利润目标]",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "543582b8-4abb-4c6a-9f02-3cbdf5be8a49"
+          },
+          {
+            "name": "广告预算完成率",
+            "expression": "DIVIDE([广告花费],[广告预算])",
+            "formatString": "0.0%",
+            "lineageTag": "1c7fa879-4a16-4d9e-b059-5e5473b5f739"
+          },
+          {
+            "name": "广告预算差额",
+            "expression": "[广告花费]-[广告预算]",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "293e47e2-de12-48a0-9aca-54bfe4b77615"
+          },
+          {
+            "name": "目标状态",
+            "expression": "IF([销售额完成率]>=1,\"达标\",\"未达标\")",
+            "lineageTag": "facbab7d-dd3c-4c63-abe7-b209e1d19a64"
+          },
+          {
+            "name": "库存成本金额",
+            "expression": "SUMX('库存',('库存'[期末可售件数]+'库存'[预留件数])*(RELATED('商品'[采购美元])+RELATED('商品'[头程美元])))",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "4494ea1f-8181-4560-98d9-1b61709a2315"
+          },
+          {
+            "name": "平均库存成本",
+            "expression": "AVERAGEX(VALUES('日期'[日期]),[库存成本金额])",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "604a9512-6caa-4f88-acbf-a479b587e8f0"
+          },
+          {
+            "name": "销售净成本",
+            "expression": "-CALCULATE([财务科目金额],'财务'[科目] IN {\"商品成本\",\"退回商品成本转回\"})",
+            "formatString": "\"$\"#,0.00",
+            "lineageTag": "90adca8c-f41b-4878-80c0-4d41ebe72955"
+          },
+          {
+            "name": "库存周转天数",
+            "expression": "DIVIDE([平均库存成本],[销售净成本])*COUNTROWS(VALUES('日期'[日期]))",
+            "formatString": "0.0",
+            "lineageTag": "a2e53051-151d-4395-87ed-36e31322964c"
+          },
+          {
+            "name": "30天无销量库存",
+            "expression": "VAR d=MAX('日期'[日期]) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(d-firstDay+1<30 || ISBLANK([期末可售库存]),BLANK(),COALESCE(SUMX(FILTER(VALUES('商品'[SKU]),NOT ISBLANK([近30天销量]) && [近30天销量]=0),[期末可售库存]),0))",
+            "formatString": "#,0",
+            "lineageTag": "37dbd4dd-6b95-45d6-9d9b-70e87cd26219"
+          },
+          {
+            "name": "30天无销量库存显示",
+            "expression": "IF(ISBLANK([期末可售库存]),\"无库存数据\",IF(ISBLANK([近30天销量]),\"历史不足30天\",FORMAT([30天无销量库存],\"#,0\")))",
+            "lineageTag": "e226b67b-d928-4490-b524-6903da178c67"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "日期",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(\"__DATA_DIR__/00_日期.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"日期\", type date},{\"年\", Int64.Type},{\"月\", Int64.Type},{\"年月\", type text},{\"星期\", Int64.Type}},\"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "商品",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "SKU",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bdc637e8-4adf-58f0-8507-9c84480ab903",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ASIN",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7a63d717-a630-5e5b-80b2-130bb7920045",
+            "sourceColumn": "ASIN",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "款式",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "113ad0d6-fcb7-597f-8d50-29a032c0633f",
+            "sourceColumn": "款式",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "颜色",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d20d8456-7e55-599c-8e94-261377ac8690",
+            "sourceColumn": "颜色",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "尺码",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f36a0509-e123-5b60-82d6-9ba9a1a077c6",
+            "sourceColumn": "尺码",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "售价美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "d17f563b-d8e8-5530-9766-f160e98c5fb5",
+            "sourceColumn": "售价美元",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "采购美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "4133898b-2698-5453-a54c-bfe21ba1e23e",
+            "sourceColumn": "采购美元",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "头程美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "8b9304cf-8935-5aef-b688-734d843297e7",
+            "sourceColumn": "头程美元",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "初始可售件数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "4f96009d-9e6f-5789-856e-abd917ebe4c8",
+            "sourceColumn": "初始可售件数",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "702b4776-a3ee-558a-9212-1650d4c50bfd",
+        "partitions": [
+          {
+            "name": "商品",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(\"__DATA_DIR__/01_商品资料.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"SKU\", type text},{\"ASIN\", type text},{\"款式\", type text},{\"颜色\", type text},{\"尺码\", type text},{\"售价美元\", Int64.Type},{\"采购美元\", Int64.Type},{\"头程美元\", Int64.Type},{\"初始可售件数\", Int64.Type}},\"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "流量",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "1d3d01a7-65fb-5bb0-a2c5-06bb63c58fe7",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SKU",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "68a7febd-006b-5af4-919e-e28a6204686c",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "商品会话数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "ae6d1dbc-bb55-5f15-bbb5-2b7371cd03d3",
+            "sourceColumn": "商品会话数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "页面浏览量",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "b68e8fc2-b969-58de-8b8e-40401932ec68",
+            "sourceColumn": "页面浏览量",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "订单数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "1256f57d-4358-5ab8-ad03-17eb1c9fe153",
+            "sourceColumn": "订单数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "订购件数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "1fe304d0-fd47-5c08-aa72-17a277767e4d",
+            "sourceColumn": "订购件数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "原价销售额美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "88b7718c-00fa-5466-b7e5-e7e21f16a99e",
+            "sourceColumn": "原价销售额美元",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "折扣美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "80a3482f-2207-5d57-8761-7ef5715af0a4",
+            "sourceColumn": "折扣美元",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "净订购销售额美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "be95ce1b-cced-5538-bdec-4cfd073d1610",
+            "sourceColumn": "净订购销售额美元",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "广告花费美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "1c7386f5-139e-5018-a73a-ddf0332e5848",
+            "sourceColumn": "广告花费美元",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "广告归因订单数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "7f404caf-c6ae-5dfc-9d68-7fac2f57dfac",
+            "sourceColumn": "广告归因订单数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "广告归因销售额美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "6ab58ff6-071b-54c9-967b-9435fdcee3b3",
+            "sourceColumn": "广告归因销售额美元",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "f47b0a2c-d733-5302-a611-2cc4911dc77d",
+        "partitions": [
+          {
+            "name": "流量",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(\"__DATA_DIR__/03_每日销售流量.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"日期\", type date},{\"SKU\", type text},{\"商品会话数\", Int64.Type},{\"页面浏览量\", Int64.Type},{\"订单数\", Int64.Type},{\"订购件数\", Int64.Type},{\"原价销售额美元\", Int64.Type},{\"折扣美元\", type number},{\"净订购销售额美元\", type number},{\"广告花费美元\", type number},{\"广告归因订单数\", Int64.Type},{\"广告归因销售额美元\", type number}},\"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "广告",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "b94403a4-e81f-584f-af99-2bce727b6737",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SKU",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d63f033c-4250-58ae-b763-41879e6ff40f",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "广告活动",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "05a18621-b4de-58af-adc5-194d795e9028",
+            "sourceColumn": "广告活动",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "关键词",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6eeeb0ab-1bcb-58e0-89b2-da1270d0b123",
+            "sourceColumn": "关键词",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "匹配方式",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "571bbb8e-5ec8-55bf-9556-f670011a838c",
+            "sourceColumn": "匹配方式",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "曝光",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "c6531eeb-97e3-58e8-acf2-129da45ced28",
+            "sourceColumn": "曝光",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "点击",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "78e11637-be4e-5086-bf44-e64bbe9d00dd",
+            "sourceColumn": "点击",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "花费美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c36eb564-18ad-5170-872d-3e07b4d8aa8a",
+            "sourceColumn": "花费美元",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "归因订单",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "fe552376-4d6d-5d6d-963c-bf5ef9df513c",
+            "sourceColumn": "归因订单",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "归因销售额美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "08afa03b-c5dc-5653-bff4-b36863b1bbf5",
+            "sourceColumn": "归因销售额美元",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "04b5953c-aaf2-5237-93c2-f97a8f619d05",
+        "partitions": [
+          {
+            "name": "广告",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(\"__DATA_DIR__/04_广告关键词.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"日期\", type date},{\"SKU\", type text},{\"广告活动\", type text},{\"关键词\", type text},{\"匹配方式\", type text},{\"曝光\", Int64.Type},{\"点击\", Int64.Type},{\"花费美元\", type number},{\"归因订单\", Int64.Type},{\"归因销售额美元\", type number}},\"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "退货",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "退货编号",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "15144c37-28a9-5772-b36f-8e077a97dc5c",
+            "sourceColumn": "退货编号",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "退货日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "a5eea231-407a-5d05-84a0-43d8996e2b04",
+            "sourceColumn": "退货日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "订单编号",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a04b739c-c83c-5f29-8a7c-252d617cb4d0",
+            "sourceColumn": "订单编号",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SKU",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "83c80ca3-9d20-5058-a05b-53d8ef18239c",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "退货件数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "270a7368-58c6-5b9c-b578-92d61f4504fb",
+            "sourceColumn": "退货件数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "原因",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a733eec7-de51-5376-9be4-b08e591fcd62",
+            "sourceColumn": "原因",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "可再次销售",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "7098dc45-d4e5-5ffe-864c-979794505561",
+            "sourceColumn": "可再次销售",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "退款美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "634cf6d0-f5e2-53b5-980c-93fc8d8f6fb2",
+            "sourceColumn": "退款美元",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "1926d927-6780-5fb3-96cb-318906c3568b",
+        "partitions": [
+          {
+            "name": "退货",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(\"__DATA_DIR__/06_退货记录.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"退货编号\", type text},{\"退货日期\", type date},{\"订单编号\", type text},{\"SKU\", type text},{\"退货件数\", Int64.Type},{\"原因\", type text},{\"可再次销售\", Int64.Type},{\"退款美元\", type number}},\"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "财务",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "事件编号",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "261522e1-69e4-5014-b8d3-3549b381b66b",
+            "sourceColumn": "事件编号",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "45db9f34-b1b0-58ea-bfbd-5ac213bb957d",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SKU",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2c21dac2-3c4f-58b8-92e0-2e5222d2d2ef",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "订单编号",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c3bacbb4-5f13-5c05-ba34-046991ece250",
+            "sourceColumn": "订单编号",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "科目",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "88f3b369-62aa-582c-8b59-7231da6a3b97",
+            "sourceColumn": "科目",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "金额美元",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d0339112-c77e-5d3a-b608-bfc4af15507c",
+            "sourceColumn": "金额美元",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "c50fba19-e58e-58b4-bad0-5509e91390de",
+        "partitions": [
+          {
+            "name": "财务",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(\"__DATA_DIR__/07_财务事件.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"事件编号\", type text},{\"日期\", type date},{\"SKU\", type text},{\"订单编号\", type text},{\"科目\", type text},{\"金额美元\", type number}},\"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "库存",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-MM-dd",
+            "lineageTag": "caf21591-70f7-5663-8fe0-69fb42dee175",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SKU",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "76668b5b-4295-5cf7-b3a0-f566b2f02119",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "期初可售件数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "d2754e88-ed31-59b8-ad8c-d02712027263",
+            "sourceColumn": "期初可售件数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "补货入库件数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "2044e8cb-4fe2-5188-8958-547126c51a66",
+            "sourceColumn": "补货入库件数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "退货入库件数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "6343189c-5868-5a6f-a30c-128ae60198e9",
+            "sourceColumn": "退货入库件数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "销售出库件数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "f81ac3d9-2123-5579-ab14-b538dbd7f528",
+            "sourceColumn": "销售出库件数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "期末可售件数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "7c7ddf03-8acd-549d-9dcd-3cac2de7653a",
+            "sourceColumn": "期末可售件数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "预留件数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "abdf8c59-9624-5a7d-857f-39b4c3407089",
+            "sourceColumn": "预留件数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "在途件数",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "lineageTag": "8266d2e4-70ab-5ce7-a554-a24ce7734882",
+            "sourceColumn": "在途件数",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "da3d64e4-b6d8-5723-818c-e97de8917443",
+        "partitions": [
+          {
+            "name": "库存",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                " Source = Csv.Document(File.Contents(\"__DATA_DIR__/08_库存每日.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),",
+                " Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),",
+                " Typed = Table.TransformColumnTypes(Headers,{{\"日期\", type date},{\"SKU\", type text},{\"期初可售件数\", Int64.Type},{\"补货入库件数\", Int64.Type},{\"退货入库件数\", Int64.Type},{\"销售出库件数\", Int64.Type},{\"期末可售件数\", Int64.Type},{\"预留件数\", Int64.Type},{\"在途件数\", Int64.Type}},\"en-US\")",
+                "in Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "利润表行",
+        "columns": [
+          {
+            "name": "序号",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "4fa0625f-363d-4ccb-9e41-e068ad232c3e",
+            "sourceColumn": "序号",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "项目",
+            "dataType": "string",
+            "lineageTag": "9275d1e8-f292-47d6-9f90-019e297b584d",
+            "sortByColumn": "序号",
+            "sourceColumn": "项目",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "346ce556-a30f-4354-8bf8-553766483076",
+        "partitions": [
+          {
+            "name": "利润表行",
+            "mode": "import",
+            "source": {
+              "expression": "let Source = #table(type table [序号=Int64.Type, 项目=text], {{1,\"一、销售收入\"},{2,\"减：促销折扣\"},{3,\"减：退款\"},{4,\"二、净收入\"},{5,\"减：平台佣金\"},{6,\"加：佣金返还\"},{7,\"减：配送费\"},{8,\"减：仓储费\"},{9,\"减：退货处理费\"},{10,\"减：广告费\"},{11,\"减：商品成本\"},{12,\"加：退回商品成本\"},{13,\"三、经营贡献利润\"}}) in Source",
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "利润层级",
+        "columns": [
+          {
+            "name": "一级项目",
+            "dataType": "string",
+            "lineageTag": "fd8b7029-8a49-416c-b5b3-2e0b7ea22c8e",
+            "sourceColumn": "一级项目",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "二级项目",
+            "dataType": "string",
+            "lineageTag": "e006e161-b6fa-4023-95e7-fbb2d068129e",
+            "sourceColumn": "二级项目",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "三级科目",
+            "dataType": "string",
+            "lineageTag": "997a5d1f-f79c-4176-875b-52f8f5cb4a38",
+            "sourceColumn": "三级科目",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "6e0fa8d6-aa5d-4ed6-8c87-d870427c5500",
+        "partitions": [
+          {
+            "name": "利润层级",
+            "mode": "import",
+            "source": {
+              "expression": "let Source=#table(type table [一级项目=text,二级项目=text,三级科目=text],{{\"01 销售收入净额\",\"01 商品收入\",\"销售收入\"},{\"01 销售收入净额\",\"02 收入扣减\",\"促销折扣\"},{\"01 销售收入净额\",\"02 收入扣减\",\"退款\"},{\"02 平台费用\",\"03 平台佣金净额\",\"平台佣金\"},{\"02 平台费用\",\"03 平台佣金净额\",\"佣金返还\"},{\"02 平台费用\",\"04 配送与仓储\",\"配送费\"},{\"02 平台费用\",\"04 配送与仓储\",\"仓储费\"},{\"02 平台费用\",\"05 退货处理\",\"退货处理费\"},{\"02 平台费用\",\"06 广告投放\",\"广告费\"},{\"03 主营业务净成本\",\"07 商品销售成本\",\"商品成本\"},{\"03 主营业务净成本\",\"08 退回成本冲回\",\"退回商品成本转回\"}}) in Source",
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "订单观察",
+        "columns": [
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "4105ca50-b5ff-422d-bfb3-009e53c96816",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SKU",
+            "dataType": "string",
+            "lineageTag": "fd7342f5-f427-4774-a7a9-19418339e6cb",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "订购件数",
+            "dataType": "int64",
+            "lineageTag": "8c9da90c-e7c4-4c3c-869f-2f6c88fa2d09",
+            "sourceColumn": "订购件数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "十天内退货件数",
+            "dataType": "int64",
+            "lineageTag": "a54e776e-3ec6-4b9b-9362-00a4c4953f82",
+            "sourceColumn": "十天内退货件数",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "ca699cfb-bb82-416a-b476-189a6abca442",
+        "partitions": [
+          {
+            "name": "订单观察",
+            "mode": "import",
+            "source": {
+              "expression": "let S=Csv.Document(File.Contents(\"__DATA_DIR__/10_订单观察窗口.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]), H=Table.PromoteHeaders(S,[PromoteAllScalars=true]), T=Table.TransformColumnTypes(H,{{\"日期\",type date},{\"SKU\",type text},{\"订购件数\",Int64.Type},{\"十天内退货件数\",Int64.Type}}) in T",
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "流量来源",
+        "columns": [
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "52e15536-9798-480b-a09a-65479a30cc30",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SKU",
+            "dataType": "string",
+            "lineageTag": "29c43b0d-ea3c-463b-a7e9-8ea07e676b3e",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "自然会话数",
+            "dataType": "double",
+            "lineageTag": "4761cd6a-6bda-471b-8ead-a0a4cf94423b",
+            "sourceColumn": "自然会话数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "广告来源会话数",
+            "dataType": "double",
+            "lineageTag": "b4c42714-44f0-43e9-80ab-d977c4bdfb78",
+            "sourceColumn": "广告来源会话数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "自然订单数",
+            "dataType": "double",
+            "lineageTag": "d30dc393-4177-4e56-9723-f0b46e740508",
+            "sourceColumn": "自然订单数",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "3e3853c6-9757-48f8-85a0-1d2776604407",
+        "partitions": [
+          {
+            "name": "流量来源",
+            "mode": "import",
+            "source": {
+              "expression": "let S=Csv.Document(File.Contents(\"__DATA_DIR__/11_流量来源.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),H=Table.PromoteHeaders(S,[PromoteAllScalars=true]),T=Table.TransformColumnTypes(H,{{\"日期\",type date},{\"SKU\",type text},{\"自然会话数\",type number},{\"广告来源会话数\",type number},{\"自然订单数\",type number}}) in T",
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "去年同期",
+        "columns": [
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "6ef87d55-a9f5-4616-9a74-a43a7d5d4dcc",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "同期日期",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "4077b56c-5f5e-4659-b7ff-41539487ee29",
+            "sourceColumn": "同期日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SKU",
+            "dataType": "string",
+            "lineageTag": "7c788c5b-e97b-4858-b90e-9ba171bfbd19",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "销售额美元",
+            "dataType": "double",
+            "lineageTag": "7d2e0373-6f1b-4b61-a3d4-9257a9472922",
+            "sourceColumn": "销售额美元",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "商品会话数",
+            "dataType": "double",
+            "lineageTag": "86dded35-e6df-4578-a636-a68853353147",
+            "sourceColumn": "商品会话数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "订单数",
+            "dataType": "double",
+            "lineageTag": "6f663dea-308f-46c7-8c95-0078969dee0e",
+            "sourceColumn": "订单数",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "销量",
+            "dataType": "double",
+            "lineageTag": "dd27e1af-2464-4ef3-9ca3-0b4776f944f7",
+            "sourceColumn": "销量",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "dbfaa018-6ec3-4672-a26b-3ace026403ee",
+        "partitions": [
+          {
+            "name": "去年同期",
+            "mode": "import",
+            "source": {
+              "expression": "let S=Csv.Document(File.Contents(\"__DATA_DIR__/12_去年同期基准.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),H=Table.PromoteHeaders(S,[PromoteAllScalars=true]),T=Table.TransformColumnTypes(H,{{\"日期\",type date},{\"同期日期\",type date},{\"SKU\",type text},{\"销售额美元\",type number},{\"商品会话数\",type number},{\"订单数\",type number},{\"销量\",type number}}) in T",
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "搜索词",
+        "columns": [
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "30951631-87cb-42aa-8c30-179c314e5631",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SKU",
+            "dataType": "string",
+            "lineageTag": "4269e5c1-3a41-49bc-b9a5-9b7ae917c2f1",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "广告活动",
+            "dataType": "string",
+            "lineageTag": "90513446-7d5d-47db-a8d2-3470cb3fca49",
+            "sourceColumn": "广告活动",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "关键词",
+            "dataType": "string",
+            "lineageTag": "3d6b08f1-610c-4ac2-80c5-5cdc19aa7478",
+            "sourceColumn": "关键词",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "搜索词",
+            "dataType": "string",
+            "lineageTag": "59f76f53-13f9-46fd-8c1c-4a489d9f7de9",
+            "sourceColumn": "搜索词",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "匹配方式",
+            "dataType": "string",
+            "lineageTag": "258c90cd-12db-4de4-a4df-86c525c67a47",
+            "sourceColumn": "匹配方式",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "曝光",
+            "dataType": "double",
+            "lineageTag": "37f1b439-9d53-4096-a3a4-17717b22a93c",
+            "sourceColumn": "曝光",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "点击",
+            "dataType": "double",
+            "lineageTag": "62f016fe-cfd5-49ab-9405-d2e5072864ae",
+            "sourceColumn": "点击",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "花费美元",
+            "dataType": "double",
+            "lineageTag": "647b212c-b356-4627-a831-fe68e535d627",
+            "sourceColumn": "花费美元",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "归因订单",
+            "dataType": "double",
+            "lineageTag": "367cc343-1bcf-483a-b12a-569aae6c5f00",
+            "sourceColumn": "归因订单",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "归因销售额美元",
+            "dataType": "double",
+            "lineageTag": "162e370a-5778-457c-a453-9be33c8af505",
+            "sourceColumn": "归因销售额美元",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "06808d16-391c-4271-8b4e-7dabebc6cfd4",
+        "partitions": [
+          {
+            "name": "搜索词",
+            "mode": "import",
+            "source": {
+              "expression": "let S=Csv.Document(File.Contents(\"__DATA_DIR__/13_搜索词明细.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),H=Table.PromoteHeaders(S,[PromoteAllScalars=true]),T=Table.TransformColumnTypes(H,{{\"日期\",type date},{\"SKU\",type text},{\"广告活动\",type text},{\"关键词\",type text},{\"搜索词\",type text},{\"匹配方式\",type text},{\"曝光\",type number},{\"点击\",type number},{\"花费美元\",type number},{\"归因订单\",type number},{\"归因销售额美元\",type number}}) in T",
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "月度目标",
+        "columns": [
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "da1b8959-54e6-432e-becd-4354cb183b2b",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SKU",
+            "dataType": "string",
+            "lineageTag": "22ac93ee-7c9a-4c32-9e52-41639686f068",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "销售额目标",
+            "dataType": "double",
+            "lineageTag": "c7a797bd-3e5e-4d1b-9bdb-ccecd2f09678",
+            "sourceColumn": "销售额目标",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "销量目标",
+            "dataType": "double",
+            "lineageTag": "ab5d62a4-49ec-4380-9d3a-826c76782d03",
+            "sourceColumn": "销量目标",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "利润目标",
+            "dataType": "double",
+            "lineageTag": "d9e2870c-dda9-4b77-8ed2-d7d74e7adb59",
+            "sourceColumn": "利润目标",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "广告预算",
+            "dataType": "double",
+            "lineageTag": "606b7939-5055-42e1-85d8-bc4c8683f3f8",
+            "sourceColumn": "广告预算",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "34409254-4a40-4f43-8050-fee2454df6bb",
+        "partitions": [
+          {
+            "name": "月度目标",
+            "mode": "import",
+            "source": {
+              "expression": "let S=Csv.Document(File.Contents(\"__DATA_DIR__/14_月度目标.csv\"),[Delimiter=\",\",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),H=Table.PromoteHeaders(S,[PromoteAllScalars=true]),T=Table.TransformColumnTypes(H,{{\"日期\",type date},{\"SKU\",type text},{\"销售额目标\",type number},{\"销量目标\",type number},{\"利润目标\",type number},{\"广告预算\",type number}}) in T",
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

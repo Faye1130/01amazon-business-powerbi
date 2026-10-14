@@ -1,0 +1,10 @@
+**/.pbi/
+**/.platform
+__pycache__/
+*.pyc
+*.zip
+*.bak
+*.备份
+*备份*
+.DS_Store
+Thumbs.db

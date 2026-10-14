@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "name": "Page8",
+  "displayName": "搜索词明细",
+  "width": 1440,
+  "height": 900,
+  "displayOption": "FitToPage"
+}

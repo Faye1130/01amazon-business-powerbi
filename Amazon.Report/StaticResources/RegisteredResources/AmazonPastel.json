@@ -1,0 +1,20 @@
+{
+  "name": "亚马逊柔和彩色",
+  "dataColors": [
+    "#6078EA",
+    "#43BFB2",
+    "#4FB0E9",
+    "#EFA3C1",
+    "#F3A557",
+    "#9D72CF",
+    "#395F89",
+    "#7BC781",
+    "#E7C552",
+    "#EF797B",
+    "#627B9E",
+    "#BAB9DA"
+  ],
+  "background": "#F7F9FC",
+  "foreground": "#395F89",
+  "tableAccent": "#6078EA"
+}

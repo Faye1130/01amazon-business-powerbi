@@ -1,0 +1,204 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 572.57389563123979,
+            "y": 705.909437797091
+          },
+          "nodeIndex": "财务",
+          "nodeLineageTag": "c50fba19-e58e-58b4-bad0-5509e91390de",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 305.95079662867875
+          },
+          "nodeIndex": "订单观察",
+          "nodeLineageTag": "ca699cfb-bb82-416a-b476-189a6abca442",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 326.09886760277186,
+            "y": -50
+          },
+          "nodeIndex": "广告",
+          "nodeLineageTag": "04b5953c-aaf2-5237-93c2-f97a8f619d05",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50.705423389883777,
+            "y": 707.05839786419233
+          },
+          "nodeIndex": "库存",
+          "nodeLineageTag": "da3d64e4-b6d8-5723-818c-e97de8917443",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1143.8667321288174,
+            "y": 462.52919893209616
+          },
+          "nodeIndex": "利润表行",
+          "nodeLineageTag": "346ce556-a30f-4354-8bf8-553766483076",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1427.8667321288174,
+            "y": 450.52919893209616
+          },
+          "nodeIndex": "利润层级",
+          "nodeLineageTag": "6e0fa8d6-aa5d-4ed6-8c87-d870427c5500",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 868.51552171592959,
+            "y": -10.303857803999563
+          },
+          "nodeIndex": "流量",
+          "nodeLineageTag": "f47b0a2c-d733-5302-a611-2cc4911dc77d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 335.77053674780785,
+            "y": 349.919003808087
+          },
+          "nodeIndex": "日期",
+          "nodeLineageTag": "e754c16f-d4fa-5189-b09f-6c21e7fbf994",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 623.77165034932773,
+            "y": 346.85607639387513
+          },
+          "nodeIndex": "商品",
+          "nodeLineageTag": "702b4776-a3ee-558a-9212-1650d4c50bfd",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 909.8667321288176,
+            "y": 384.38452519860692
+          },
+          "nodeIndex": "退货",
+          "nodeLineageTag": "1926d927-6780-5fb3-96cb-318906c3568b",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1661.8667321288174,
+            "y": 426.52919893209616
+          },
+          "nodeIndex": "流量来源",
+          "nodeLineageTag": "3e3853c6-9757-48f8-85a0-1d2776604407",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1945.8667321288174,
+            "y": 402.52919893209616
+          },
+          "nodeIndex": "去年同期",
+          "nodeLineageTag": "dbfaa018-6ec3-4672-a26b-3ace026403ee",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2229.8667321288176,
+            "y": 376.52919893209616
+          },
+          "nodeIndex": "搜索词",
+          "nodeLineageTag": "06808d16-391c-4271-8b4e-7dabebc6cfd4",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2513.8667321288176,
+            "y": 414.52919893209616
+          },
+          "nodeIndex": "月度目标",
+          "nodeLineageTag": "34409254-4a40-4f43-8050-fee2454df6bb",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "所有表",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "所有表",
+  "defaultDiagram": "所有表"
+}
