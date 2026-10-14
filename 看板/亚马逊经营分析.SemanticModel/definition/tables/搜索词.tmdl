@@ -1,0 +1,76 @@
+table 搜索词
+	lineageTag: 06808d16-391c-4271-8b4e-7dabebc6cfd4
+
+	column 日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 30951631-87cb-42aa-8c30-179c314e5631
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SKU
+		dataType: string
+		lineageTag: 4269e5c1-3a41-49bc-b9a5-9b7ae917c2f1
+		summarizeBy: none
+		sourceColumn: SKU
+
+	column 广告活动
+		dataType: string
+		lineageTag: 90513446-7d5d-47db-a8d2-3470cb3fca49
+		summarizeBy: none
+		sourceColumn: 广告活动
+
+	column 关键词
+		dataType: string
+		lineageTag: 3d6b08f1-610c-4ac2-80c5-5cdc19aa7478
+		summarizeBy: none
+		sourceColumn: 关键词
+
+	column 搜索词
+		dataType: string
+		lineageTag: 59f76f53-13f9-46fd-8c1c-4a489d9f7de9
+		summarizeBy: none
+		sourceColumn: 搜索词
+
+	column 匹配方式
+		dataType: string
+		lineageTag: 258c90cd-12db-4de4-a4df-86c525c67a47
+		summarizeBy: none
+		sourceColumn: 匹配方式
+
+	column 曝光
+		dataType: double
+		lineageTag: 37f1b439-9d53-4096-a3a4-17717b22a93c
+		summarizeBy: sum
+		sourceColumn: 曝光
+
+	column 点击
+		dataType: double
+		lineageTag: 62f016fe-cfd5-49ab-9405-d2e5072864ae
+		summarizeBy: sum
+		sourceColumn: 点击
+
+	column 花费美元
+		dataType: double
+		lineageTag: 647b212c-b356-4627-a831-fe68e535d627
+		summarizeBy: sum
+		sourceColumn: 花费美元
+
+	column 归因订单
+		dataType: double
+		lineageTag: 367cc343-1bcf-483a-b12a-569aae6c5f00
+		summarizeBy: sum
+		sourceColumn: 归因订单
+
+	column 归因销售额美元
+		dataType: double
+		lineageTag: 162e370a-5778-457c-a453-9be33c8af505
+		summarizeBy: sum
+		sourceColumn: 归因销售额美元
+
+	partition 搜索词 = m
+		mode: import
+		source = let S=Csv.Document(File.Contents("__DATA_DIR__/13_搜索词明细.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),H=Table.PromoteHeaders(S,[PromoteAllScalars=true]),T=Table.TransformColumnTypes(H,{{"日期",type date},{"SKU",type text},{"广告活动",type text},{"关键词",type text},{"搜索词",type text},{"匹配方式",type text},{"曝光",type number},{"点击",type number},{"花费美元",type number},{"归因订单",type number},{"归因销售额美元",type number}}) in T
+

@@ -1,0 +1,113 @@
+table 流量
+	lineageTag: f47b0a2c-d733-5302-a611-2cc4911dc77d
+
+	column 日期
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 1d3d01a7-65fb-5bb0-a2c5-06bb63c58fe7
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SKU
+		dataType: string
+		lineageTag: 68a7febd-006b-5af4-919e-e28a6204686c
+		summarizeBy: none
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = User
+
+	column 商品会话数
+		dataType: int64
+		lineageTag: ae6d1dbc-bb55-5f15-bbb5-2b7371cd03d3
+		summarizeBy: sum
+		sourceColumn: 商品会话数
+
+		annotation SummarizationSetBy = User
+
+	column 页面浏览量
+		dataType: int64
+		lineageTag: b68e8fc2-b969-58de-8b8e-40401932ec68
+		summarizeBy: sum
+		sourceColumn: 页面浏览量
+
+		annotation SummarizationSetBy = User
+
+	column 订单数
+		dataType: int64
+		lineageTag: 1256f57d-4358-5ab8-ad03-17eb1c9fe153
+		summarizeBy: sum
+		sourceColumn: 订单数
+
+		annotation SummarizationSetBy = User
+
+	column 订购件数
+		dataType: int64
+		lineageTag: 1fe304d0-fd47-5c08-aa72-17a277767e4d
+		summarizeBy: sum
+		sourceColumn: 订购件数
+
+		annotation SummarizationSetBy = User
+
+	column 原价销售额美元
+		dataType: int64
+		lineageTag: 88b7718c-00fa-5466-b7e5-e7e21f16a99e
+		summarizeBy: sum
+		sourceColumn: 原价销售额美元
+
+		annotation SummarizationSetBy = User
+
+	column 折扣美元
+		dataType: double
+		lineageTag: 80a3482f-2207-5d57-8761-7ef5715af0a4
+		summarizeBy: sum
+		sourceColumn: 折扣美元
+
+		annotation SummarizationSetBy = User
+
+	column 净订购销售额美元
+		dataType: double
+		lineageTag: be95ce1b-cced-5538-bdec-4cfd073d1610
+		summarizeBy: sum
+		sourceColumn: 净订购销售额美元
+
+		annotation SummarizationSetBy = User
+
+	column 广告花费美元
+		dataType: double
+		lineageTag: 1c7386f5-139e-5018-a73a-ddf0332e5848
+		summarizeBy: sum
+		sourceColumn: 广告花费美元
+
+		annotation SummarizationSetBy = User
+
+	column 广告归因订单数
+		dataType: int64
+		lineageTag: 7f404caf-c6ae-5dfc-9d68-7fac2f57dfac
+		summarizeBy: sum
+		sourceColumn: 广告归因订单数
+
+		annotation SummarizationSetBy = User
+
+	column 广告归因销售额美元
+		dataType: double
+		lineageTag: 6ab58ff6-071b-54c9-967b-9435fdcee3b3
+		summarizeBy: sum
+		sourceColumn: 广告归因销售额美元
+
+		annotation SummarizationSetBy = User
+
+	partition 流量 = m
+		mode: import
+		source =
+				let
+				 Source = Csv.Document(File.Contents("__DATA_DIR__/03_每日销售流量.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				 Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				 Typed = Table.TransformColumnTypes(Headers,{{"日期", type date},{"SKU", type text},{"商品会话数", Int64.Type},{"页面浏览量", Int64.Type},{"订单数", Int64.Type},{"订购件数", Int64.Type},{"原价销售额美元", Int64.Type},{"折扣美元", type number},{"净订购销售额美元", type number},{"广告花费美元", type number},{"广告归因订单数", Int64.Type},{"广告归因销售额美元", type number}},"en-US")
+				in Typed
+
+	annotation PBI_ResultType = Table
+

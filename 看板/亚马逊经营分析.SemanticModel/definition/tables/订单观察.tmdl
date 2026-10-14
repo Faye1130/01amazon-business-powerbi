@@ -1,0 +1,34 @@
+table 订单观察
+	lineageTag: ca699cfb-bb82-416a-b476-189a6abca442
+
+	column 日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4105ca50-b5ff-422d-bfb3-009e53c96816
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SKU
+		dataType: string
+		lineageTag: fd7342f5-f427-4774-a7a9-19418339e6cb
+		summarizeBy: none
+		sourceColumn: SKU
+
+	column 订购件数
+		dataType: int64
+		lineageTag: 8c9da90c-e7c4-4c3c-869f-2f6c88fa2d09
+		summarizeBy: sum
+		sourceColumn: 订购件数
+
+	column 十天内退货件数
+		dataType: int64
+		lineageTag: a54e776e-3ec6-4b9b-9362-00a4c4953f82
+		summarizeBy: sum
+		sourceColumn: 十天内退货件数
+
+	partition 订单观察 = m
+		mode: import
+		source = let S=Csv.Document(File.Contents("__DATA_DIR__/10_订单观察窗口.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]), H=Table.PromoteHeaders(S,[PromoteAllScalars=true]), T=Table.TransformColumnTypes(H,{{"日期",type date},{"SKU",type text},{"订购件数",Int64.Type},{"十天内退货件数",Int64.Type}}) in T
+

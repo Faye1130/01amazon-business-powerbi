@@ -1,0 +1,89 @@
+table 库存
+	lineageTag: da3d64e4-b6d8-5723-818c-e97de8917443
+
+	column 日期
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: caf21591-70f7-5663-8fe0-69fb42dee175
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SKU
+		dataType: string
+		lineageTag: 76668b5b-4295-5cf7-b3a0-f566b2f02119
+		summarizeBy: none
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = User
+
+	column 期初可售件数
+		dataType: int64
+		lineageTag: d2754e88-ed31-59b8-ad8c-d02712027263
+		summarizeBy: sum
+		sourceColumn: 期初可售件数
+
+		annotation SummarizationSetBy = User
+
+	column 补货入库件数
+		dataType: int64
+		lineageTag: 2044e8cb-4fe2-5188-8958-547126c51a66
+		summarizeBy: sum
+		sourceColumn: 补货入库件数
+
+		annotation SummarizationSetBy = User
+
+	column 退货入库件数
+		dataType: int64
+		lineageTag: 6343189c-5868-5a6f-a30c-128ae60198e9
+		summarizeBy: sum
+		sourceColumn: 退货入库件数
+
+		annotation SummarizationSetBy = User
+
+	column 销售出库件数
+		dataType: int64
+		lineageTag: f81ac3d9-2123-5579-ab14-b538dbd7f528
+		summarizeBy: sum
+		sourceColumn: 销售出库件数
+
+		annotation SummarizationSetBy = User
+
+	column 期末可售件数
+		dataType: int64
+		lineageTag: 7c7ddf03-8acd-549d-9dcd-3cac2de7653a
+		summarizeBy: sum
+		sourceColumn: 期末可售件数
+
+		annotation SummarizationSetBy = User
+
+	column 预留件数
+		dataType: int64
+		lineageTag: abdf8c59-9624-5a7d-857f-39b4c3407089
+		summarizeBy: sum
+		sourceColumn: 预留件数
+
+		annotation SummarizationSetBy = User
+
+	column 在途件数
+		dataType: int64
+		lineageTag: 8266d2e4-70ab-5ce7-a554-a24ce7734882
+		summarizeBy: sum
+		sourceColumn: 在途件数
+
+		annotation SummarizationSetBy = User
+
+	partition 库存 = m
+		mode: import
+		source =
+				let
+				 Source = Csv.Document(File.Contents("__DATA_DIR__/08_库存每日.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				 Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				 Typed = Table.TransformColumnTypes(Headers,{{"日期", type date},{"SKU", type text},{"期初可售件数", Int64.Type},{"补货入库件数", Int64.Type},{"退货入库件数", Int64.Type},{"销售出库件数", Int64.Type},{"期末可售件数", Int64.Type},{"预留件数", Int64.Type},{"在途件数", Int64.Type}},"en-US")
+				in Typed
+
+	annotation PBI_ResultType = Table
+

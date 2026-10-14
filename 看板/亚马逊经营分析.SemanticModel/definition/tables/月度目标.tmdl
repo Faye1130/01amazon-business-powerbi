@@ -1,0 +1,46 @@
+table 月度目标
+	lineageTag: 34409254-4a40-4f43-8050-fee2454df6bb
+
+	column 日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: da1b8959-54e6-432e-becd-4354cb183b2b
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SKU
+		dataType: string
+		lineageTag: 22ac93ee-7c9a-4c32-9e52-41639686f068
+		summarizeBy: none
+		sourceColumn: SKU
+
+	column 销售额目标
+		dataType: double
+		lineageTag: c7a797bd-3e5e-4d1b-9bdb-ccecd2f09678
+		summarizeBy: sum
+		sourceColumn: 销售额目标
+
+	column 销量目标
+		dataType: double
+		lineageTag: ab5d62a4-49ec-4380-9d3a-826c76782d03
+		summarizeBy: sum
+		sourceColumn: 销量目标
+
+	column 利润目标
+		dataType: double
+		lineageTag: d9e2870c-dda9-4b77-8ed2-d7d74e7adb59
+		summarizeBy: sum
+		sourceColumn: 利润目标
+
+	column 广告预算
+		dataType: double
+		lineageTag: 606b7939-5055-42e1-85d8-bc4c8683f3f8
+		summarizeBy: sum
+		sourceColumn: 广告预算
+
+	partition 月度目标 = m
+		mode: import
+		source = let S=Csv.Document(File.Contents("__DATA_DIR__/14_月度目标.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),H=Table.PromoteHeaders(S,[PromoteAllScalars=true]),T=Table.TransformColumnTypes(H,{{"日期",type date},{"SKU",type text},{"销售额目标",type number},{"销量目标",type number},{"利润目标",type number},{"广告预算",type number}}) in T
+

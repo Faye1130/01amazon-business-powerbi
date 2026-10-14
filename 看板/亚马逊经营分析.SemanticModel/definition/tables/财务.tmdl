@@ -1,0 +1,65 @@
+table 财务
+	lineageTag: c50fba19-e58e-58b4-bad0-5509e91390de
+
+	column 事件编号
+		dataType: string
+		lineageTag: 261522e1-69e4-5014-b8d3-3549b381b66b
+		summarizeBy: none
+		sourceColumn: 事件编号
+
+		annotation SummarizationSetBy = User
+
+	column 日期
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 45db9f34-b1b0-58ea-bfbd-5ac213bb957d
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SKU
+		dataType: string
+		lineageTag: 2c21dac2-3c4f-58b8-92e0-2e5222d2d2ef
+		summarizeBy: none
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = User
+
+	column 订单编号
+		dataType: string
+		lineageTag: c3bacbb4-5f13-5c05-ba34-046991ece250
+		summarizeBy: none
+		sourceColumn: 订单编号
+
+		annotation SummarizationSetBy = User
+
+	column 科目
+		dataType: string
+		lineageTag: 88f3b369-62aa-582c-8b59-7231da6a3b97
+		summarizeBy: none
+		sourceColumn: 科目
+
+		annotation SummarizationSetBy = User
+
+	column 金额美元
+		dataType: double
+		lineageTag: d0339112-c77e-5d3a-b608-bfc4af15507c
+		summarizeBy: sum
+		sourceColumn: 金额美元
+
+		annotation SummarizationSetBy = User
+
+	partition 财务 = m
+		mode: import
+		source =
+				let
+				 Source = Csv.Document(File.Contents("__DATA_DIR__/07_财务事件.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				 Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				 Typed = Table.TransformColumnTypes(Headers,{{"事件编号", type text},{"日期", type date},{"SKU", type text},{"订单编号", type text},{"科目", type text},{"金额美元", type number}},"en-US")
+				in Typed
+
+	annotation PBI_ResultType = Table
+

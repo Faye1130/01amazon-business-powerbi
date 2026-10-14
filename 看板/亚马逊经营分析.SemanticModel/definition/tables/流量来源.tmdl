@@ -1,0 +1,40 @@
+table 流量来源
+	lineageTag: 3e3853c6-9757-48f8-85a0-1d2776604407
+
+	column 日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 52e15536-9798-480b-a09a-65479a30cc30
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SKU
+		dataType: string
+		lineageTag: 29c43b0d-ea3c-463b-a7e9-8ea07e676b3e
+		summarizeBy: none
+		sourceColumn: SKU
+
+	column 自然会话数
+		dataType: double
+		lineageTag: 4761cd6a-6bda-471b-8ead-a0a4cf94423b
+		summarizeBy: sum
+		sourceColumn: 自然会话数
+
+	column 广告来源会话数
+		dataType: double
+		lineageTag: b4c42714-44f0-43e9-80ab-d977c4bdfb78
+		summarizeBy: sum
+		sourceColumn: 广告来源会话数
+
+	column 自然订单数
+		dataType: double
+		lineageTag: d30dc393-4177-4e56-9723-f0b46e740508
+		summarizeBy: sum
+		sourceColumn: 自然订单数
+
+	partition 流量来源 = m
+		mode: import
+		source = let S=Csv.Document(File.Contents("__DATA_DIR__/11_流量来源.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),H=Table.PromoteHeaders(S,[PromoteAllScalars=true]),T=Table.TransformColumnTypes(H,{{"日期",type date},{"SKU",type text},{"自然会话数",type number},{"广告来源会话数",type number},{"自然订单数",type number}}) in T
+

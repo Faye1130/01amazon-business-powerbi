@@ -1,0 +1,86 @@
+table 商品
+	lineageTag: 702b4776-a3ee-558a-9212-1650d4c50bfd
+
+	column SKU
+		dataType: string
+		lineageTag: bdc637e8-4adf-58f0-8507-9c84480ab903
+		summarizeBy: none
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = User
+
+	column ASIN
+		dataType: string
+		lineageTag: 7a63d717-a630-5e5b-80b2-130bb7920045
+		summarizeBy: none
+		sourceColumn: ASIN
+
+		annotation SummarizationSetBy = User
+
+	column 款式
+		dataType: string
+		lineageTag: 113ad0d6-fcb7-597f-8d50-29a032c0633f
+		summarizeBy: none
+		sourceColumn: 款式
+
+		annotation SummarizationSetBy = User
+
+	column 颜色
+		dataType: string
+		lineageTag: d20d8456-7e55-599c-8e94-261377ac8690
+		summarizeBy: none
+		sourceColumn: 颜色
+
+		annotation SummarizationSetBy = User
+
+	column 尺码
+		dataType: string
+		lineageTag: f36a0509-e123-5b60-82d6-9ba9a1a077c6
+		summarizeBy: none
+		sourceColumn: 尺码
+
+		annotation SummarizationSetBy = User
+
+	column 售价美元
+		dataType: int64
+		lineageTag: d17f563b-d8e8-5530-9766-f160e98c5fb5
+		summarizeBy: none
+		sourceColumn: 售价美元
+
+		annotation SummarizationSetBy = User
+
+	column 采购美元
+		dataType: int64
+		lineageTag: 4133898b-2698-5453-a54c-bfe21ba1e23e
+		summarizeBy: none
+		sourceColumn: 采购美元
+
+		annotation SummarizationSetBy = User
+
+	column 头程美元
+		dataType: int64
+		lineageTag: 8b9304cf-8935-5aef-b688-734d843297e7
+		summarizeBy: none
+		sourceColumn: 头程美元
+
+		annotation SummarizationSetBy = User
+
+	column 初始可售件数
+		dataType: int64
+		lineageTag: 4f96009d-9e6f-5789-856e-abd917ebe4c8
+		summarizeBy: none
+		sourceColumn: 初始可售件数
+
+		annotation SummarizationSetBy = User
+
+	partition 商品 = m
+		mode: import
+		source =
+				let
+				 Source = Csv.Document(File.Contents("__DATA_DIR__/01_商品资料.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				 Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				 Typed = Table.TransformColumnTypes(Headers,{{"SKU", type text},{"ASIN", type text},{"款式", type text},{"颜色", type text},{"尺码", type text},{"售价美元", Int64.Type},{"采购美元", Int64.Type},{"头程美元", Int64.Type},{"初始可售件数", Int64.Type}},"en-US")
+				in Typed
+
+	annotation PBI_ResultType = Table
+

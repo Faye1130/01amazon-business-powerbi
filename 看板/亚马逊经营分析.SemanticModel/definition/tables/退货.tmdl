@@ -1,0 +1,81 @@
+table 退货
+	lineageTag: 1926d927-6780-5fb3-96cb-318906c3568b
+
+	column 退货编号
+		dataType: string
+		lineageTag: 15144c37-28a9-5772-b36f-8e077a97dc5c
+		summarizeBy: none
+		sourceColumn: 退货编号
+
+		annotation SummarizationSetBy = User
+
+	column 退货日期
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: a5eea231-407a-5d05-84a0-43d8996e2b04
+		summarizeBy: none
+		sourceColumn: 退货日期
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 订单编号
+		dataType: string
+		lineageTag: a04b739c-c83c-5f29-8a7c-252d617cb4d0
+		summarizeBy: none
+		sourceColumn: 订单编号
+
+		annotation SummarizationSetBy = User
+
+	column SKU
+		dataType: string
+		lineageTag: 83c80ca3-9d20-5058-a05b-53d8ef18239c
+		summarizeBy: none
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = User
+
+	column 退货件数
+		dataType: int64
+		lineageTag: 270a7368-58c6-5b9c-b578-92d61f4504fb
+		summarizeBy: sum
+		sourceColumn: 退货件数
+
+		annotation SummarizationSetBy = User
+
+	column 原因
+		dataType: string
+		lineageTag: a733eec7-de51-5376-9be4-b08e591fcd62
+		summarizeBy: none
+		sourceColumn: 原因
+
+		annotation SummarizationSetBy = User
+
+	column 可再次销售
+		dataType: int64
+		lineageTag: 7098dc45-d4e5-5ffe-864c-979794505561
+		summarizeBy: sum
+		sourceColumn: 可再次销售
+
+		annotation SummarizationSetBy = User
+
+	column 退款美元
+		dataType: double
+		lineageTag: 634cf6d0-f5e2-53b5-980c-93fc8d8f6fb2
+		summarizeBy: sum
+		sourceColumn: 退款美元
+
+		annotation SummarizationSetBy = User
+
+	partition 退货 = m
+		mode: import
+		source =
+				let
+				 Source = Csv.Document(File.Contents("__DATA_DIR__/06_退货记录.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				 Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				 Typed = Table.TransformColumnTypes(Headers,{{"退货编号", type text},{"退货日期", type date},{"订单编号", type text},{"SKU", type text},{"退货件数", Int64.Type},{"原因", type text},{"可再次销售", Int64.Type},{"退款美元", type number}},"en-US")
+				in Typed
+
+	annotation PBI_ResultType = Table
+

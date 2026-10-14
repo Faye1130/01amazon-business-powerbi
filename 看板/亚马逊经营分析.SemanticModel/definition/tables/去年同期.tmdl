@@ -1,0 +1,55 @@
+table 去年同期
+	lineageTag: dbfaa018-6ec3-4672-a26b-3ace026403ee
+
+	column 日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6ef87d55-a9f5-4616-9a74-a43a7d5d4dcc
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 同期日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4077b56c-5f5e-4659-b7ff-41539487ee29
+		summarizeBy: none
+		sourceColumn: 同期日期
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SKU
+		dataType: string
+		lineageTag: 7c788c5b-e97b-4858-b90e-9ba171bfbd19
+		summarizeBy: none
+		sourceColumn: SKU
+
+	column 销售额美元
+		dataType: double
+		lineageTag: 7d2e0373-6f1b-4b61-a3d4-9257a9472922
+		summarizeBy: sum
+		sourceColumn: 销售额美元
+
+	column 商品会话数
+		dataType: double
+		lineageTag: 86dded35-e6df-4578-a636-a68853353147
+		summarizeBy: sum
+		sourceColumn: 商品会话数
+
+	column 订单数
+		dataType: double
+		lineageTag: 6f663dea-308f-46c7-8c95-0078969dee0e
+		summarizeBy: sum
+		sourceColumn: 订单数
+
+	column 销量
+		dataType: double
+		lineageTag: dd27e1af-2464-4ef3-9ca3-0b4776f944f7
+		summarizeBy: sum
+		sourceColumn: 销量
+
+	partition 去年同期 = m
+		mode: import
+		source = let S=Csv.Document(File.Contents("__DATA_DIR__/12_去年同期基准.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),H=Table.PromoteHeaders(S,[PromoteAllScalars=true]),T=Table.TransformColumnTypes(H,{{"日期",type date},{"同期日期",type date},{"SKU",type text},{"销售额美元",type number},{"商品会话数",type number},{"订单数",type number},{"销量",type number}}) in T
+

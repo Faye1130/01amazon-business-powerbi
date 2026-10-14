@@ -1,0 +1,29 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["日期","商品","流量","广告","退货","财务","库存","利润表行","利润层级","订单观察","流量来源","去年同期","搜索词","月度目标"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 日期
+ref table 商品
+ref table 流量
+ref table 广告
+ref table 退货
+ref table 财务
+ref table 库存
+ref table 利润表行
+ref table 利润层级
+ref table 订单观察
+ref table 流量来源
+ref table 去年同期
+ref table 搜索词
+ref table 月度目标
+

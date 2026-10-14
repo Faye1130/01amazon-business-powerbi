@@ -1,0 +1,452 @@
+table 日期
+	lineageTag: e754c16f-d4fa-5189-b09f-6c21e7fbf994
+
+	measure 销售额 = SUM('流量'[净订购销售额美元])
+		formatString: "$"#,0.00
+		lineageTag: bd87716e-1375-5532-8294-fc4ba3389bd2
+
+	measure 订单数 = SUM('流量'[订单数])
+		formatString: #,0
+		lineageTag: ab239b61-c59c-5ae1-bc9d-d02c956adc3d
+
+	measure 销量 = SUM('流量'[订购件数])
+		formatString: #,0
+		lineageTag: 788cf57e-40e8-5278-a311-181e88329cf7
+
+	measure 商品会话数 = SUM('流量'[商品会话数])
+		formatString: #,0
+		lineageTag: 4204755d-736b-5cbb-90b0-76248f84385e
+
+	measure 订单会话比 = DIVIDE([订单数],[商品会话数])
+		formatString: 0.00%
+		lineageTag: bccae521-24af-5946-b7f9-459680a77765
+
+	measure 客单价 = DIVIDE([销售额],[订单数])
+		formatString: "$"0.00
+		lineageTag: 81f21c61-8789-5497-b346-060ea34cb9af
+
+	measure 经营贡献利润 = SUM('财务'[金额美元])
+		formatString: "$"#,0.00
+		lineageTag: 9b817915-a20c-5b91-bc0e-223befd4257b
+
+	measure 财务科目金额 = SUM('财务'[金额美元])
+		formatString: "$"#,0.00
+		lineageTag: 4a73b49c-e648-521d-bcba-e6212ff70bb0
+
+	measure 广告花费 = SUM('广告'[花费美元])
+		formatString: "$"#,0.00
+		lineageTag: b0896b1f-b7a6-5f09-98a1-d07a33a97030
+
+	measure 广告归因销售额 = SUM('广告'[归因销售额美元])
+		formatString: "$"#,0.00
+		lineageTag: 002fd848-e65e-5e0e-9039-927334dc30a7
+
+	measure 点击数 = SUM('广告'[点击])
+		formatString: #,0
+		lineageTag: b12888fa-04f4-5fb4-b28a-afc635c053d7
+
+	measure 点击率 = DIVIDE([点击数],SUM('广告'[曝光]))
+		formatString: 0.00%
+		lineageTag: 71b2b0e2-5938-55f4-bce9-7ca0e6e91339
+
+	measure 广告投入产出比 = DIVIDE([广告归因销售额],[广告花费])
+		formatString: 0.00
+		lineageTag: 679b576d-d0b7-56ca-a3c6-131de7258ccf
+
+	measure 广告销售成本比 = DIVIDE([广告花费],[广告归因销售额])
+		formatString: 0.00%
+		lineageTag: ab1a69f4-0ef8-5968-b0c1-12a4465187e5
+
+	measure 期末可售库存 = VAR d=MAX('日期'[日期]) RETURN CALCULATE(SUM('库存'[期末可售件数]),'日期'[日期]=d)
+		formatString: #,0
+		lineageTag: 3ae96fd4-5933-510c-805d-b9105b75fd07
+
+	measure 期末在途库存 = VAR d=MAX('日期'[日期]) RETURN CALCULATE(SUM('库存'[在途件数]),'日期'[日期]=d)
+		formatString: #,0
+		lineageTag: ffd6dfb6-6b85-57f3-b820-18f98f06e9d0
+
+	measure 退货件数 = SUM('退货'[退货件数])
+		formatString: #,0
+		lineageTag: 25cf24bb-d7ea-5ff9-9e28-6504b2115ce3
+
+	measure 退款金额 = SUM('退货'[退款美元])
+		formatString: "$"#,0.00
+		lineageTag: ef2eaa57-1129-55f1-b849-65677ad9ad35
+
+	measure 件均售价 = DIVIDE([销售额],[销量])
+		formatString: "$"0.00
+		lineageTag: 5255d6f2-a150-4844-a52e-604077243d2d
+
+	measure 利润率 = DIVIDE([经营贡献利润],[销售收入总额])
+		formatString: 0.0%
+		lineageTag: 4d1b342e-1e93-45f5-b538-4dbfd2e5711f
+
+	measure 广告费占销售额 = DIVIDE([广告花费],[销售额])
+		formatString: 0.0%
+		lineageTag: ac4db256-7d58-4bca-a41e-b45411e9cb9d
+
+	measure 曝光量 = SUM('广告'[曝光])
+		formatString: #,0
+		lineageTag: a1e901c3-990a-45ed-815c-277bbf00c910
+
+	measure 广告归因订单 = SUM('广告'[归因订单])
+		formatString: #,0
+		lineageTag: fb16e288-a877-405d-86b0-9d5d3be8f24a
+
+	measure 点击单价 = DIVIDE([广告花费],[点击数])
+		formatString: "$"0.00
+		lineageTag: 7ce62c81-6763-45bb-8138-908b0607626b
+
+	measure 广告订单点击比 = DIVIDE([广告归因订单],[点击数])
+		formatString: 0.0%
+		lineageTag: 9173374a-09c3-45c0-aba4-c1cae50ff76d
+
+	measure 退货记录数 = COUNTROWS('退货')
+		formatString: #,0
+		lineageTag: 78deffbe-e14d-45ea-b08e-a8a583446cf5
+
+	measure 近7天销量 = VAR d=MAX('日期'[日期]) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(d-firstDay+1>=7,CALCULATE([销量],REMOVEFILTERS('日期'),'日期'[日期]>d-7,'日期'[日期]<=d))
+		formatString: #,0
+		lineageTag: 47d6128f-4283-41ca-a265-2d34d136a5e7
+
+	measure 近14天销量 = VAR d=MAX('日期'[日期]) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(d-firstDay+1>=14,CALCULATE([销量],REMOVEFILTERS('日期'),'日期'[日期]>d-14,'日期'[日期]<=d))
+		formatString: #,0
+		lineageTag: 29c0334d-f5f4-4647-ab9f-910d9540ae90
+
+	measure 近30天销量 = VAR d=MAX('日期'[日期]) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(d-firstDay+1>=30,CALCULATE([销量],REMOVEFILTERS('日期'),'日期'[日期]>d-30,'日期'[日期]<=d))
+		formatString: #,0
+		lineageTag: bc7e9afc-7bb8-44ba-bf65-2ba0bc366c63
+
+	measure 日均销量7天 = DIVIDE([近7天销量],7)
+		formatString: 0.0
+		lineageTag: c94c4ff9-1386-4daf-8660-9d7dbc26738c
+
+	measure 可售覆盖天数 = DIVIDE([期末可售库存],[日均销量7天])
+		formatString: 0.0
+		lineageTag: 2bd52f31-42bc-4fa6-9cd5-b5f809b051fd
+
+	measure 库存状态 = IF(NOT ISINSCOPE('商品'[SKU]),FORMAT([缺货SKU数],"0") & "款缺货",IF(ISBLANK([近7天销量]),"历史不足",IF([期末可售库存]=0,"🔴 缺货",IF([近7天销量]=0,"无近期销量",IF([可售覆盖天数]<15,"🔴 紧张",IF([可售覆盖天数]<=30,"🟡 关注","🟢 充足"))))))
+		lineageTag: db1d2424-ac4e-4b1f-a974-98c90d42bec4
+
+	measure 销售额上期 = VAR oneMonth=HASONEVALUE('日期'[年月]) VAR d=MAX('日期'[日期]) VAR prevStart=EOMONTH(d,-2)+1 VAR prevEnd=EOMONTH(d,-1) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(oneMonth && prevStart>=firstDay,CALCULATE([销售额],REMOVEFILTERS('日期'),'日期'[日期]>=prevStart,'日期'[日期]<=prevEnd))
+		formatString: #,0.00
+		lineageTag: be359cf6-b0f4-4307-9e95-a8bfbf05d901
+
+	measure 销售额变化 = DIVIDE([销售额]-[销售额上期],[销售额上期])
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: dc6c77f8-fd6c-471e-b468-a78fb6eebcd0
+
+	measure 商品会话数上期 = VAR oneMonth=HASONEVALUE('日期'[年月]) VAR d=MAX('日期'[日期]) VAR prevStart=EOMONTH(d,-2)+1 VAR prevEnd=EOMONTH(d,-1) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(oneMonth && prevStart>=firstDay,CALCULATE([商品会话数],REMOVEFILTERS('日期'),'日期'[日期]>=prevStart,'日期'[日期]<=prevEnd))
+		formatString: #,0.00
+		lineageTag: 037c0e64-513b-4611-b0ec-58d89f2cd96a
+
+	measure 商品会话数变化 = DIVIDE([商品会话数]-[商品会话数上期],[商品会话数上期])
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: a068eba0-6461-4d14-ae7d-0528c9ba7a7b
+
+	measure 订单会话比上期 = VAR oneMonth=HASONEVALUE('日期'[年月]) VAR d=MAX('日期'[日期]) VAR prevStart=EOMONTH(d,-2)+1 VAR prevEnd=EOMONTH(d,-1) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(oneMonth && prevStart>=firstDay,CALCULATE([订单会话比],REMOVEFILTERS('日期'),'日期'[日期]>=prevStart,'日期'[日期]<=prevEnd))
+		formatString: 0.00%
+		lineageTag: a375414a-df19-4620-b2e2-fd2cdcae770b
+
+	measure 订单会话比变化 = DIVIDE([订单会话比]-[订单会话比上期],[订单会话比上期])
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: f76d575d-bbce-49c9-b46e-5b35dcf28c9e
+
+	measure 销量上期 = VAR oneMonth=HASONEVALUE('日期'[年月]) VAR d=MAX('日期'[日期]) VAR prevStart=EOMONTH(d,-2)+1 VAR prevEnd=EOMONTH(d,-1) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(oneMonth && prevStart>=firstDay,CALCULATE([销量],REMOVEFILTERS('日期'),'日期'[日期]>=prevStart,'日期'[日期]<=prevEnd))
+		formatString: #,0.00
+		lineageTag: 98f1acf7-c6a5-451e-a934-7517b0527107
+
+	measure 销量变化 = DIVIDE([销量]-[销量上期],[销量上期])
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 45c0f865-0327-41d4-97aa-3157b373645e
+
+	measure 客单价上期 = VAR oneMonth=HASONEVALUE('日期'[年月]) VAR d=MAX('日期'[日期]) VAR prevStart=EOMONTH(d,-2)+1 VAR prevEnd=EOMONTH(d,-1) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(oneMonth && prevStart>=firstDay,CALCULATE([客单价],REMOVEFILTERS('日期'),'日期'[日期]>=prevStart,'日期'[日期]<=prevEnd))
+		formatString: #,0.00
+		lineageTag: fb70934a-06ad-4a09-ad70-6ec2103e8314
+
+	measure 客单价变化 = DIVIDE([客单价]-[客单价上期],[客单价上期])
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: e5521fbf-153c-4013-a351-3203778bc597
+
+	measure 利润表金额 = SWITCH(SELECTEDVALUE('利润表行'[序号]),1,CALCULATE([财务科目金额],'财务'[科目]="销售收入"),2,CALCULATE([财务科目金额],'财务'[科目]="促销折扣"),3,CALCULATE([财务科目金额],'财务'[科目]="退款"),5,CALCULATE([财务科目金额],'财务'[科目]="平台佣金"),6,CALCULATE([财务科目金额],'财务'[科目]="佣金返还"),7,CALCULATE([财务科目金额],'财务'[科目]="配送费"),8,CALCULATE([财务科目金额],'财务'[科目]="仓储费"),9,CALCULATE([财务科目金额],'财务'[科目]="退货处理费"),10,CALCULATE([财务科目金额],'财务'[科目]="广告费"),11,CALCULATE([财务科目金额],'财务'[科目]="商品成本"),12,CALCULATE([财务科目金额],'财务'[科目]="退回商品成本转回"),4,CALCULATE([财务科目金额],'财务'[科目] IN {"销售收入","促销折扣","退款"}),13,[经营贡献利润])
+		formatString: "$"#,0.00;("$"#,0.00)
+		lineageTag: a0fe9274-e8bd-443e-8401-c8fc53ba4a5f
+
+	measure 收入占比 = DIVIDE([利润表金额],CALCULATE([财务科目金额],'财务'[科目]="销售收入"))
+		formatString: 0.0%
+		lineageTag: e14e05a3-b116-4408-a7ed-bfbea21d1e13
+
+	measure 销售额环比显示 = IF(NOT HASONEVALUE('日期'[年月]),"请选择单个月份",IF(ISBLANK([销售额上期]),"暂无上月数据",IF([销售额上期]=0,"上月为零，无法计算",FORMAT([销售额变化],"+0.0%;-0.0%;0.0%"))))
+		lineageTag: c058062a-5a06-44b8-8ac7-4ed34f483c0a
+
+	measure 商品会话数环比显示 = IF(NOT HASONEVALUE('日期'[年月]),"请选择单个月份",IF(ISBLANK([商品会话数上期]),"暂无上月数据",IF([商品会话数上期]=0,"上月为零，无法计算",FORMAT([商品会话数变化],"+0.0%;-0.0%;0.0%"))))
+		lineageTag: 604a255e-4f86-41dd-a357-16aa1d549016
+
+	measure 订单会话比环比显示 = IF(NOT HASONEVALUE('日期'[年月]),"请选择单个月份",IF(ISBLANK([订单会话比上期]),"暂无上月数据",IF([订单会话比上期]=0,"上月为零，无法计算",FORMAT([订单会话比变化],"+0.0%;-0.0%;0.0%"))))
+		lineageTag: d513ccb4-06e6-4614-b859-da6d89406680
+
+	measure 销量环比显示 = IF(NOT HASONEVALUE('日期'[年月]),"请选择单个月份",IF(ISBLANK([销量上期]),"暂无上月数据",IF([销量上期]=0,"上月为零，无法计算",FORMAT([销量变化],"+0.0%;-0.0%;0.0%"))))
+		lineageTag: 1259ced2-6f8d-444b-8d18-687b39b60788
+
+	measure 客单价环比显示 = IF(NOT HASONEVALUE('日期'[年月]),"请选择单个月份",IF(ISBLANK([客单价上期]),"暂无上月数据",IF([客单价上期]=0,"上月为零，无法计算",FORMAT([客单价变化],"+0.0%;-0.0%;0.0%"))))
+		lineageTag: 3f66462d-776c-4103-a9a3-e588beedd729
+
+	measure 选中利润项目金额 = CALCULATE([财务科目金额],TREATAS(VALUES('利润层级'[三级科目]),'财务'[科目]))
+		formatString: "$"#,0.00;("$"#,0.00)
+		lineageTag: 2c953ee3-52d6-4d87-89a4-f7f09f3a6b37
+
+	measure 销售收入总额 = CALCULATE([财务科目金额],'财务'[科目]="销售收入")
+		formatString: "$"#,0.00
+		lineageTag: b8fe3554-fcee-4b06-9649-c31e790e17a8
+
+	measure 选中项目收入占比 = DIVIDE([选中利润项目金额],[销售收入总额])
+		formatString: 0.0%
+		lineageTag: 8716bf52-cd16-42a8-8655-62cb083f4c5c
+
+	measure 期末预留库存 = VAR d=MAX('日期'[日期]) RETURN CALCULATE(SUM('库存'[预留件数]),'日期'[日期]=d)
+		formatString: #,0
+		lineageTag: 48436bd2-58da-49d3-86ec-541816481259
+
+	measure 期末总库存 = [期末可售库存]+[期末预留库存]+[期末在途库存]
+		formatString: #,0
+		lineageTag: 994cbb14-65e0-4f36-8b8c-4c57c8b456c9
+
+	measure 缺货SKU数 = COUNTROWS(FILTER(VALUES('商品'[SKU]),NOT ISBLANK([期末可售库存]) && [期末可售库存]=0))
+		formatString: #,0
+		lineageTag: 9bebc559-c7a2-46b3-9521-53494706ec49
+
+	measure 库存状态颜色 = IF(NOT ISINSCOPE('商品'[SKU]),"#FFFFFF",IF([期末可售库存]=0,"#EF797B",IF(ISBLANK([可售覆盖天数]),"#BAB9DA",IF([可售覆盖天数]<15,"#EF797B",IF([可售覆盖天数]<=30,"#E7C552","#7BC781")))))
+		lineageTag: bdd8fc04-bfe7-4023-b171-ceba104a9be3
+
+	measure 单次会话销售额 = DIVIDE([销售额],[商品会话数])
+		formatString: "$"0.00
+		lineageTag: 4f29574c-b35d-473f-8d82-515ce0d4a815
+
+	measure 日均销售额 = DIVIDE([销售额],COUNTROWS(VALUES('日期'[日期])))
+		formatString: "$"#,0.00
+		lineageTag: 3dbeabeb-cd80-470a-bc73-cd46a41f0fd4
+
+	measure 日均会话数 = DIVIDE([商品会话数],COUNTROWS(VALUES('日期'[日期])))
+		formatString: #,0.0
+		lineageTag: c2796136-b1ea-4cf2-9df0-7ebf23f739da
+
+	measure 退货原因占比 = DIVIDE([退货件数],CALCULATE([退货件数],REMOVEFILTERS('退货'[原因])))
+		formatString: 0.0%
+		lineageTag: 851867c2-e79a-4f4e-9fe2-b9a0aec4caa4
+
+	measure 退货处理费用 = -CALCULATE([财务科目金额],'财务'[科目]="退货处理费")
+		formatString: "$"#,0.00
+		lineageTag: 9c5b8ba0-5c76-45d1-a7b6-ae5bd9713acb
+
+	measure 无订单广告花费 = COALESCE(SUMX(FILTER(SUMMARIZE('广告','广告'[广告活动],'广告'[关键词]),[广告归因订单]=0),[广告花费]),0)
+		formatString: "$"#,0.00
+		lineageTag: 597a2cd6-0783-420c-82fe-d8e8cc54b047
+
+	measure 观察满10天订购件数 = VAR d=MAX('日期'[日期]) RETURN CALCULATE(SUM('订单观察'[订购件数]),KEEPFILTERS('订单观察'[日期]<=d-10))
+		formatString: #,0
+		lineageTag: 20040869-c94e-499c-80b7-aef61c1d0a35
+
+	measure 观察满10天退货件数 = VAR d=MAX('日期'[日期]) RETURN CALCULATE(SUM('订单观察'[十天内退货件数]),KEEPFILTERS('订单观察'[日期]<=d-10))
+		formatString: #,0
+		lineageTag: 2501bc25-8049-4187-9cd0-c43d9770682a
+
+	measure 10天内退货率 = DIVIDE([观察满10天退货件数],[观察满10天订购件数])
+		formatString: 0.00%
+		lineageTag: ee54e899-1865-4ddc-8f41-6f001b6c54ba
+
+	measure 自然会话数 = SUM('流量来源'[自然会话数])
+		formatString: #,0
+		lineageTag: 781e7c76-4230-493e-a70d-aad4acdb05dd
+
+	measure 广告来源会话数 = SUM('流量来源'[广告来源会话数])
+		formatString: #,0
+		lineageTag: 7c9a244c-593c-4346-a646-2f95627d78a0
+
+	measure 自然订单数 = SUM('流量来源'[自然订单数])
+		formatString: #,0
+		lineageTag: 8030f14e-cd81-4efe-b47f-61f8e6c8f862
+
+	measure 销售额去年同期 = SUM('去年同期'[销售额美元])
+		formatString: #,0
+		lineageTag: cabbfa2d-42a6-4088-98f7-d9e20088c6f0
+
+	measure 销售额同比 = DIVIDE([销售额]-[销售额去年同期],[销售额去年同期])
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: bc751709-fc75-4648-86c7-02e09a616ab9
+
+	measure 商品会话数去年同期 = SUM('去年同期'[商品会话数])
+		formatString: #,0
+		lineageTag: 8f078e6b-d9b0-4748-b1c9-d9749031a346
+
+	measure 商品会话数同比 = DIVIDE([商品会话数]-[商品会话数去年同期],[商品会话数去年同期])
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 23fc604e-f753-41c6-a946-d935257c38fe
+
+	measure 订单数去年同期 = SUM('去年同期'[订单数])
+		formatString: #,0
+		lineageTag: 33165d40-fbf8-477f-8b1c-f6767faab9f0
+
+	measure 订单数同比 = DIVIDE([订单数]-[订单数去年同期],[订单数去年同期])
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 18f3cfc4-147d-46ed-a830-7650008df689
+
+	measure 销量去年同期 = SUM('去年同期'[销量])
+		formatString: #,0
+		lineageTag: 1348c32a-e7c3-451f-a971-6b112f05615d
+
+	measure 销量同比 = DIVIDE([销量]-[销量去年同期],[销量去年同期])
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 8a6cd865-fa5d-40e6-b695-1306c4fddb2d
+
+	measure 搜索词花费 = SUM('搜索词'[花费美元])
+		formatString: "$"#,0.00
+		lineageTag: 293bff15-dacd-472e-82c0-89301a3726cb
+
+	measure 搜索词订单 = SUM('搜索词'[归因订单])
+		formatString: #,0
+		lineageTag: 1d492cf0-e66a-411d-8b2b-ada843fa7a67
+
+	measure 搜索词销售额 = SUM('搜索词'[归因销售额美元])
+		formatString: "$"#,0.00
+		lineageTag: 45bf90a7-13f6-47f5-ba78-606b13293ff2
+
+	measure 搜索词点击 = SUM('搜索词'[点击])
+		formatString: #,0
+		lineageTag: a09f70bf-1e1f-4985-9f6b-817a47493585
+
+	measure 搜索词ACOS = DIVIDE([搜索词花费],[搜索词销售额])
+		formatString: 0.0%
+		lineageTag: a437f6d0-c072-4445-a4c8-c1923e881a5f
+
+	measure 搜索词出单率 = DIVIDE(COUNTROWS(FILTER(VALUES('搜索词'[搜索词]),[搜索词订单]>0)),COUNTROWS(FILTER(VALUES('搜索词'[搜索词]),[搜索词点击]>0)))
+		formatString: 0.0%
+		lineageTag: b9071dc2-cc2d-4c5f-9d23-cf483b31ee05
+
+	measure 销售额目标 = SUM('月度目标'[销售额目标])
+		formatString: "$"#,0.00
+		lineageTag: 720a9197-33d0-48f6-b9f4-b3c293ff29db
+
+	measure 销量目标 = SUM('月度目标'[销量目标])
+		formatString: #,0
+		lineageTag: d4b5bbef-1e58-4c41-9a21-98a99117822f
+
+	measure 利润目标 = SUM('月度目标'[利润目标])
+		formatString: "$"#,0.00
+		lineageTag: dd41112b-99e6-4758-ba3f-7afc32eae289
+
+	measure 广告预算 = SUM('月度目标'[广告预算])
+		formatString: "$"#,0.00
+		lineageTag: 893071d7-abba-4619-8853-0b4518522669
+
+	measure 销售额完成率 = DIVIDE([销售额],[销售额目标])
+		formatString: 0.0%
+		lineageTag: 185aea7b-a50e-4a65-8677-eac91f74927e
+
+	measure 销售额差额 = [销售额]-[销售额目标]
+		formatString: "$"#,0.00
+		lineageTag: a8d35702-8c21-4b7a-a83f-046958f2e49a
+
+	measure 销量完成率 = DIVIDE([销量],[销量目标])
+		formatString: 0.0%
+		lineageTag: 3cff82cb-4898-462f-be5e-31ee3291fdf7
+
+	measure 销量差额 = [销量]-[销量目标]
+		formatString: #,0
+		lineageTag: 6fb0d7fe-e97c-4315-b72d-086014e2548b
+
+	measure 利润完成率 = DIVIDE([经营贡献利润],[利润目标])
+		formatString: 0.0%
+		lineageTag: 3a031dd0-a920-43db-a577-c1bfd0cd4e8e
+
+	measure 利润差额 = [经营贡献利润]-[利润目标]
+		formatString: "$"#,0.00
+		lineageTag: 543582b8-4abb-4c6a-9f02-3cbdf5be8a49
+
+	measure 广告预算完成率 = DIVIDE([广告花费],[广告预算])
+		formatString: 0.0%
+		lineageTag: 1c7fa879-4a16-4d9e-b059-5e5473b5f739
+
+	measure 广告预算差额 = [广告花费]-[广告预算]
+		formatString: "$"#,0.00
+		lineageTag: 293e47e2-de12-48a0-9aca-54bfe4b77615
+
+	measure 目标状态 = IF([销售额完成率]>=1,"达标","未达标")
+		lineageTag: facbab7d-dd3c-4c63-abe7-b209e1d19a64
+
+	measure 库存成本金额 = SUMX('库存',('库存'[期末可售件数]+'库存'[预留件数])*(RELATED('商品'[采购美元])+RELATED('商品'[头程美元])))
+		formatString: "$"#,0.00
+		lineageTag: 4494ea1f-8181-4560-98d9-1b61709a2315
+
+	measure 平均库存成本 = AVERAGEX(VALUES('日期'[日期]),[库存成本金额])
+		formatString: "$"#,0.00
+		lineageTag: 604a9512-6caa-4f88-acbf-a479b587e8f0
+
+	measure 销售净成本 = -CALCULATE([财务科目金额],'财务'[科目] IN {"商品成本","退回商品成本转回"})
+		formatString: "$"#,0.00
+		lineageTag: 90adca8c-f41b-4878-80c0-4d41ebe72955
+
+	measure 库存周转天数 = DIVIDE([平均库存成本],[销售净成本])*COUNTROWS(VALUES('日期'[日期]))
+		formatString: 0.0
+		lineageTag: a2e53051-151d-4395-87ed-36e31322964c
+
+	measure 30天无销量库存 = VAR d=MAX('日期'[日期]) VAR firstDay=CALCULATE(MIN('日期'[日期]),REMOVEFILTERS('日期')) RETURN IF(d-firstDay+1<30 || ISBLANK([期末可售库存]),BLANK(),COALESCE(SUMX(FILTER(VALUES('商品'[SKU]),NOT ISBLANK([近30天销量]) && [近30天销量]=0),[期末可售库存]),0))
+		formatString: #,0
+		lineageTag: 37dbd4dd-6b95-45d6-9d9b-70e87cd26219
+
+	measure 30天无销量库存显示 = IF(ISBLANK([期末可售库存]),"无库存数据",IF(ISBLANK([近30天销量]),"历史不足30天",FORMAT([30天无销量库存],"#,0")))
+		lineageTag: e226b67b-d928-4490-b524-6903da178c67
+
+	column 日期
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 72f1de62-01a4-5587-887f-1c7a88700188
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 年
+		dataType: int64
+		lineageTag: cd52674d-d189-54ff-8523-598aedf0523b
+		summarizeBy: none
+		sourceColumn: 年
+
+		annotation SummarizationSetBy = User
+
+	column 月
+		dataType: int64
+		lineageTag: 4d0c896d-ce52-53f7-be45-ddedcc61af59
+		summarizeBy: none
+		sourceColumn: 月
+
+		annotation SummarizationSetBy = User
+
+	column 年月
+		dataType: string
+		lineageTag: 352b3c3f-a439-5289-a237-54a3c9433a53
+		summarizeBy: none
+		sourceColumn: 年月
+
+		annotation SummarizationSetBy = User
+
+	column 星期
+		dataType: int64
+		lineageTag: 3fdf2f00-b1f3-50cc-b3d9-f19a6d40adc4
+		summarizeBy: none
+		sourceColumn: 星期
+
+		annotation SummarizationSetBy = User
+
+	partition 日期 = m
+		mode: import
+		source =
+				let
+				 Source = Csv.Document(File.Contents("__DATA_DIR__/00_日期.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				 Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				 Typed = Table.TransformColumnTypes(Headers,{{"日期", type date},{"年", Int64.Type},{"月", Int64.Type},{"年月", type text},{"星期", Int64.Type}},"en-US")
+				in Typed
+
+	annotation PBI_ResultType = Table
+

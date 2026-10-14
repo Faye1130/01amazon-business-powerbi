@@ -1,0 +1,21 @@
+table 利润表行
+	lineageTag: 346ce556-a30f-4354-8bf8-553766483076
+
+	column 序号
+		dataType: int64
+		isHidden
+		lineageTag: 4fa0625f-363d-4ccb-9e41-e068ad232c3e
+		summarizeBy: none
+		sourceColumn: 序号
+
+	column 项目
+		dataType: string
+		lineageTag: 9275d1e8-f292-47d6-9f90-019e297b584d
+		summarizeBy: none
+		sourceColumn: 项目
+		sortByColumn: 序号
+
+	partition 利润表行 = m
+		mode: import
+		source = let Source = #table(type table [序号=Int64.Type, 项目=text], {{1,"一、销售收入"},{2,"减：促销折扣"},{3,"减：退款"},{4,"二、净收入"},{5,"减：平台佣金"},{6,"加：佣金返还"},{7,"减：配送费"},{8,"减：仓储费"},{9,"减：退货处理费"},{10,"减：广告费"},{11,"减：商品成本"},{12,"加：退回商品成本"},{13,"三、经营贡献利润"}}) in Source
+

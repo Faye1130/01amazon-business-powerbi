@@ -1,0 +1,97 @@
+table 广告
+	lineageTag: 04b5953c-aaf2-5237-93c2-f97a8f619d05
+
+	column 日期
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: b94403a4-e81f-584f-af99-2bce727b6737
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SKU
+		dataType: string
+		lineageTag: d63f033c-4250-58ae-b763-41879e6ff40f
+		summarizeBy: none
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = User
+
+	column 广告活动
+		dataType: string
+		lineageTag: 05a18621-b4de-58af-adc5-194d795e9028
+		summarizeBy: none
+		sourceColumn: 广告活动
+
+		annotation SummarizationSetBy = User
+
+	column 关键词
+		dataType: string
+		lineageTag: 6eeeb0ab-1bcb-58e0-89b2-da1270d0b123
+		summarizeBy: none
+		sourceColumn: 关键词
+
+		annotation SummarizationSetBy = User
+
+	column 匹配方式
+		dataType: string
+		lineageTag: 571bbb8e-5ec8-55bf-9556-f670011a838c
+		summarizeBy: none
+		sourceColumn: 匹配方式
+
+		annotation SummarizationSetBy = User
+
+	column 曝光
+		dataType: int64
+		lineageTag: c6531eeb-97e3-58e8-acf2-129da45ced28
+		summarizeBy: sum
+		sourceColumn: 曝光
+
+		annotation SummarizationSetBy = User
+
+	column 点击
+		dataType: int64
+		lineageTag: 78e11637-be4e-5086-bf44-e64bbe9d00dd
+		summarizeBy: sum
+		sourceColumn: 点击
+
+		annotation SummarizationSetBy = User
+
+	column 花费美元
+		dataType: double
+		lineageTag: c36eb564-18ad-5170-872d-3e07b4d8aa8a
+		summarizeBy: sum
+		sourceColumn: 花费美元
+
+		annotation SummarizationSetBy = User
+
+	column 归因订单
+		dataType: int64
+		lineageTag: fe552376-4d6d-5d6d-963c-bf5ef9df513c
+		summarizeBy: sum
+		sourceColumn: 归因订单
+
+		annotation SummarizationSetBy = User
+
+	column 归因销售额美元
+		dataType: double
+		lineageTag: 08afa03b-c5dc-5653-bff4-b36863b1bbf5
+		summarizeBy: sum
+		sourceColumn: 归因销售额美元
+
+		annotation SummarizationSetBy = User
+
+	partition 广告 = m
+		mode: import
+		source =
+				let
+				 Source = Csv.Document(File.Contents("__DATA_DIR__/04_广告关键词.csv"),[Delimiter=",",Encoding=65001,QuoteStyle=QuoteStyle.Csv]),
+				 Headers = Table.PromoteHeaders(Source,[PromoteAllScalars=true]),
+				 Typed = Table.TransformColumnTypes(Headers,{{"日期", type date},{"SKU", type text},{"广告活动", type text},{"关键词", type text},{"匹配方式", type text},{"曝光", Int64.Type},{"点击", Int64.Type},{"花费美元", type number},{"归因订单", Int64.Type},{"归因销售额美元", type number}},"en-US")
+				in Typed
+
+	annotation PBI_ResultType = Table
+

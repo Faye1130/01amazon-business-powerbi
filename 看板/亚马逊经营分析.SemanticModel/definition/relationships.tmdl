@@ -1,0 +1,80 @@
+relationship 01f961d4-c2a6-4057-925c-8b7996a2d057
+	fromColumn: 流量.SKU
+	toColumn: 商品.SKU
+
+relationship f82a6509-93aa-48ac-8fa8-fbd00a35dc95
+	fromColumn: 流量.日期
+	toColumn: 日期.日期
+
+relationship d29748c3-7c9e-485d-8439-cc4379aa1524
+	fromColumn: 广告.SKU
+	toColumn: 商品.SKU
+
+relationship 9a1b18d0-5e07-4550-bd27-95335137788a
+	fromColumn: 广告.日期
+	toColumn: 日期.日期
+
+relationship e0fde1f7-a738-46ad-b119-e8f48d9bc844
+	fromColumn: 退货.SKU
+	toColumn: 商品.SKU
+
+relationship 0e0faf74-566b-4fcc-9fbd-e35516eaff0a
+	fromColumn: 退货.退货日期
+	toColumn: 日期.日期
+
+relationship b968ccbf-4847-4fa1-bbdf-53fceae7b533
+	fromColumn: 财务.SKU
+	toColumn: 商品.SKU
+
+relationship 63f7ee51-cd76-4744-81ac-4737b92602bf
+	fromColumn: 财务.日期
+	toColumn: 日期.日期
+
+relationship 895be6ad-224c-4054-9b2d-a99bea7f63c3
+	fromColumn: 库存.SKU
+	toColumn: 商品.SKU
+
+relationship 56cb46ce-cf62-4c12-b4b8-3dc71d444ca1
+	fromColumn: 库存.日期
+	toColumn: 日期.日期
+
+relationship dfe7ff60-d8e4-4765-a248-416565739f0b
+	fromColumn: 订单观察.SKU
+	toColumn: 商品.SKU
+
+relationship e022857f-d2f7-4165-837e-d24e9d6cfbc4
+	fromColumn: 订单观察.日期
+	toColumn: 日期.日期
+
+relationship d50a5149-b6f5-4c3c-a4df-1abf4b7056e2
+	fromColumn: 流量来源.日期
+	toColumn: 日期.日期
+
+relationship 2db3d788-2a69-416b-a758-980af16fd31c
+	fromColumn: 流量来源.SKU
+	toColumn: 商品.SKU
+
+relationship a21e9e16-1e34-48fb-9bdb-54d33f29f50f
+	fromColumn: 去年同期.日期
+	toColumn: 日期.日期
+
+relationship 2ad67d08-56cd-46d7-8931-2ef05dc2c8db
+	fromColumn: 去年同期.SKU
+	toColumn: 商品.SKU
+
+relationship 13892b26-ab6e-4a53-af65-8b1b7546bdf2
+	fromColumn: 搜索词.日期
+	toColumn: 日期.日期
+
+relationship 67c0c9be-da93-4881-8121-ddf8b9b3f2ec
+	fromColumn: 搜索词.SKU
+	toColumn: 商品.SKU
+
+relationship d08eb04d-cf9f-4ea2-bfe7-83beff4b8f62
+	fromColumn: 月度目标.日期
+	toColumn: 日期.日期
+
+relationship ae218d79-8035-497a-ba2e-a08a53bf1cd8
+	fromColumn: 月度目标.SKU
+	toColumn: 商品.SKU
+

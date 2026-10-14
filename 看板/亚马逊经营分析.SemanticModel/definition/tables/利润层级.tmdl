@@ -1,0 +1,25 @@
+table 利润层级
+	lineageTag: 6e0fa8d6-aa5d-4ed6-8c87-d870427c5500
+
+	column 一级项目
+		dataType: string
+		lineageTag: fd8b7029-8a49-416c-b5b3-2e0b7ea22c8e
+		summarizeBy: none
+		sourceColumn: 一级项目
+
+	column 二级项目
+		dataType: string
+		lineageTag: e006e161-b6fa-4023-95e7-fbb2d068129e
+		summarizeBy: none
+		sourceColumn: 二级项目
+
+	column 三级科目
+		dataType: string
+		lineageTag: 997a5d1f-f79c-4176-875b-52f8f5cb4a38
+		summarizeBy: none
+		sourceColumn: 三级科目
+
+	partition 利润层级 = m
+		mode: import
+		source = let Source=#table(type table [一级项目=text,二级项目=text,三级科目=text],{{"01 销售收入净额","01 商品收入","销售收入"},{"01 销售收入净额","02 收入扣减","促销折扣"},{"01 销售收入净额","02 收入扣减","退款"},{"02 平台费用","03 平台佣金净额","平台佣金"},{"02 平台费用","03 平台佣金净额","佣金返还"},{"02 平台费用","04 配送与仓储","配送费"},{"02 平台费用","04 配送与仓储","仓储费"},{"02 平台费用","05 退货处理","退货处理费"},{"02 平台费用","06 广告投放","广告费"},{"03 主营业务净成本","07 商品销售成本","商品成本"},{"03 主营业务净成本","08 退回成本冲回","退回商品成本转回"}}) in Source
+
